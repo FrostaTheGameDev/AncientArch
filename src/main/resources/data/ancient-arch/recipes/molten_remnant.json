@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 1500,
+  "experience": 0.1,
+  "group": "coal",
+  "ingredient": {
+    "item": "ancient-arch:remnant_shard"
+  },
+  "result": "ancient-arch:molten_remnant"
+}

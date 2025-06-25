@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:clay_ball"
+    },
+    "$": {
+      "item": "minecraft:white_dye"
+    },
+    "%": {
+      "item": "minecraft:water_bucket"
+    },
+    "^": {
+      "item": "ancient-arch:silica_gel_packet"
+    }
+  },
+  "pattern": [
+    "^#^",
+    "$%$",
+    "^#^"
+  ],
+  "result": {
+    "count": 4,
+    "item": "ancient-arch:moldable_porcelain"
+  }
+}

@@ -1,3 +1,18 @@
 {
-  "item.ancient-arch.silica": "Silica"
+  "item.ancient-arch.silica_gel_packet": "Silica Gel Packet",
+  "item.ancient-arch.moldable_porcelain": "Moldable Porcelain",
+  "item.ancient-arch.clay_slip": "Clay Slip",
+  "item.ancient-arch.silica": "Silica",
+  "item.ancient-arch.remnant_shard": "Remnant Shard",
+  "item.ancient-arch.molten_remnant": "Molten Remnant",
+  "item.ancient-arch.unconditioned_ancient_mould": "Unconditioned Ancient Mould",
+  "item.ancient-arch.conditioned_ancient_mould": "Conditioned Ancient Mould",
+  "item.ancient-arch.hammer_and_chisel": "Hammer And Chisel",
+
+  "block.ancient-arch.cracked_end_portal_frame": "Cracked End Portal Frame",
+  "block.ancient-arch.cracked_end_portal_frame_used": "Used Cracked End Portal Frame",
+
+  "itemgroup.porcelain_group": "Moldable",
+  "itemgroup.ancient_building_block_group": "Ancient Building Blocks"
 }
+

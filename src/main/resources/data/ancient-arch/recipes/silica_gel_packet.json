@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "ancient-arch:silica"
+    },
+    {
+      "item": "ancient-arch:silica"
+    },
+    {
+      "item": "ancient-arch:silica"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "ancient-arch:silica_gel_packet"
+  }
+}
