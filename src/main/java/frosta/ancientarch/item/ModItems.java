@@ -20,6 +20,8 @@ public class ModItems {
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item CONDITIONED_ANCIENT_MOULD = registerItem("conditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item CONDITIONED_ARMOR_MOULD = registerItem("conditioned_armor_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item CONDITIONED_WEAPON_MOULD = registerItem("conditioned_weapon_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item HAMMER_AND_CHISEL = registerItem("hammer_and_chisel", new HammerAndChiselItem(ToolMaterials.NETHERITE, new FabricItemSettings().maxCount(1)));
     public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings()));
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
@@ -35,6 +37,8 @@ public class ModItems {
         entries.add(MOLTEN_REMNANT);
         entries.add(UNCONDITIONED_ANCIENT_MOULD);
         entries.add(CONDITIONED_ANCIENT_MOULD);
+        entries.add(CONDITIONED_ARMOR_MOULD);
+        entries.add(CONDITIONED_WEAPON_MOULD);
         entries.add(UNREFINED_ANCIENT_AMALGAM);
         entries.add(ANCIENT_INGOT);
     }

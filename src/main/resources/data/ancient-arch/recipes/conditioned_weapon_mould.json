@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "minecraft:iron_sword"
+  },
+  "addition": {
+    "item": "ancient-arch:ancient_ingot"
+  },
+  "template": {
+    "item": "ancient-arch:unconditioned_ancient_mould"
+  },
+  "result": {
+    "item": "ancient-arch:conditioned_weapon_mould"
+  }
+}

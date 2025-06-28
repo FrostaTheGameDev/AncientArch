@@ -25,6 +25,8 @@ public class ModItemGroups {
                         entries.add(ModItems.MOLTEN_REMNANT);
                         entries.add(ModItems.UNCONDITIONED_ANCIENT_MOULD);
                         entries.add(ModItems.CONDITIONED_ANCIENT_MOULD);
+                        entries.add(ModItems.CONDITIONED_ARMOR_MOULD);
+                        entries.add(ModItems.CONDITIONED_WEAPON_MOULD);
                     }).build());
 
     public static final ItemGroup ANCIENT_BUILDING_BLOCK_GROUP = Registry.register(Registries.ITEM_GROUP,
