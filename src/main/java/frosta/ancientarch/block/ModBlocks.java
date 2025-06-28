@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
+import net.minecraft.block.SmithingTableBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -19,7 +20,8 @@ public class ModBlocks {
             new CrackedEndPortalFrameBlock(FabricBlockSettings.copyOf(Blocks.END_PORTAL_FRAME)));
     public static final Block CRACKED_END_PORTAL_FRAME_USED = registerBlock("cracked_end_portal_frame_used",
             new EndPortalFrameBlock(FabricBlockSettings.copyOf(Blocks.END_PORTAL_FRAME)));
-
+public static final Block ANCIENT_BLOCK = registerBlock("ancient_block",
+        new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

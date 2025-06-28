@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 0.1,
+  "group": "coal",
+  "ingredient": {
+    "item": "ancient-arch:unrefined_ancient_amalgam"
+  },
+  "result": "ancient-arch:ancient_ingot"
+}

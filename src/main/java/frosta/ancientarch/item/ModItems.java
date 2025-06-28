@@ -5,10 +5,7 @@ import frosta.ancientarch.item.custom.HammerAndChiselItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ToolItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -21,9 +18,12 @@ public class ModItems {
     public static final Item SILICA = registerItem("silica", new Item(new FabricItemSettings()));
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould",new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+    public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item CONDITIONED_ANCIENT_MOULD = registerItem("conditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item HAMMER_AND_CHISEL = registerItem("hammer_and_chisel", new HammerAndChiselItem(ToolMaterials.NETHERITE, new FabricItemSettings().maxCount(1)));
+    public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings()));
+    public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
+    public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ModFoodComponents.PINEAPPLE)));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 
@@ -35,6 +35,11 @@ public class ModItems {
         entries.add(MOLTEN_REMNANT);
         entries.add(UNCONDITIONED_ANCIENT_MOULD);
         entries.add(CONDITIONED_ANCIENT_MOULD);
+        entries.add(UNREFINED_ANCIENT_AMALGAM);
+        entries.add(ANCIENT_INGOT);
+    }
+    private static void addItemsToFoodAndDrinkItemsGroup(FabricItemGroupEntries entries) {
+        entries.add(PINEAPPLE);
     }
 
     private static Item registerItem(String name, Item item) {
@@ -45,5 +50,6 @@ public class ModItems {
         AncientArch.LOGGER.info("Registering Mod Items for " + AncientArch.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodAndDrinkItemsGroup);
     }
 }

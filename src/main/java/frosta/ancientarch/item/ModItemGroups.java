@@ -10,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.injection.selectors.ElementNode;
 
 public class ModItemGroups {
     public static final ItemGroup PORCELAIN_GROUP = Registry.register(Registries.ITEM_GROUP,
@@ -29,8 +30,8 @@ public class ModItemGroups {
     public static final ItemGroup ANCIENT_BUILDING_BLOCK_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(AncientArch.MOD_ID, "ancient_building_block"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ancient_building_block_group"))
-                    .icon(() -> new ItemStack(ModBlocks.CRACKED_END_PORTAL_FRAME)).entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.CRACKED_END_PORTAL_FRAME);
+                    .icon(() -> new ItemStack(ModBlocks.ANCIENT_BLOCK)).entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.ANCIENT_BLOCK);
 
                     }).build());
 

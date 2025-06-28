@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ancient-arch:block/ancient_block"
+    }
+  }
+}

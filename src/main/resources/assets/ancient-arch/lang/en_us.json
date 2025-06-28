@@ -8,9 +8,13 @@
   "item.ancient-arch.unconditioned_ancient_mould": "Unconditioned Ancient Mould",
   "item.ancient-arch.conditioned_ancient_mould": "Conditioned Ancient Mould",
   "item.ancient-arch.hammer_and_chisel": "Hammer And Chisel",
+  "item.ancient-arch.ancient_ingot": "Ancient Ingot",
+  "item.ancient-arch.unrefined_ancient_amalgam": "Unrefined Ancient Amalgam",
+  "item.ancient-arch.pineapple": "Pineapple",
 
   "block.ancient-arch.cracked_end_portal_frame": "Cracked End Portal Frame",
   "block.ancient-arch.cracked_end_portal_frame_used": "Used Cracked End Portal Frame",
+  "block.ancient-arch.ancient_block": "Ancient Block",
 
   "itemgroup.porcelain_group": "Moldable",
   "itemgroup.ancient_building_block_group": "Ancient Building Blocks"
