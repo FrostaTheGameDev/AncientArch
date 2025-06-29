@@ -2,23 +2,26 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "#": {
+      "item": "minecraft:clay_ball"
+    },
     "$": {
-      "item": "ancient-arch:moldable_porcelain"
+      "item": "minecraft:white_dye"
     },
     "%": {
-      "item": "minecraft:netherite_upgrade_smithing_template"
+      "item": "minecraft:water_bucket"
     },
     "^": {
-      "item": "ancient-arch:molten_remnant"
+      "item": "ancient-arch:silica_gel_packet"
     }
   },
   "pattern": [
-    "^^^",
+    "^#^",
     "$%$",
-    "^^^"
+    "^#^"
   ],
   "result": {
-    "count": 1,
-    "item": "ancient-arch:unconditioned_ancient_mould"
+    "count": 4,
+    "item": "ancient-arch:moldable_porcelain"
   }
 }
