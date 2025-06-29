@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "$": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "ancient-arch:ancient_ingot"
+    },
+    "^": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    "^%^",
+    "%$%",
+    " $ "
+  ],
+  "result": {
+    "count": 1,
+    "item": "ancient-arch:ancient_greataxe"
+  }
+}

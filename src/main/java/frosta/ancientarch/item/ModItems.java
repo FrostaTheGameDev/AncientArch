@@ -26,6 +26,8 @@ public class ModItems {
     public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings()));
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ModFoodComponents.PINEAPPLE)));
+    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ModToolMaterial.ANCIENT_INGOT, 8f,-3f, new FabricItemSettings()));
+    public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new SwordItem(ModToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 
@@ -50,10 +52,16 @@ public class ModItems {
         return Registry.register(Registries.ITEM, new Identifier(AncientArch.MOD_ID, name), item);
     }
 
+    private static void addItemsToCombatItemsGroup(FabricItemGroupEntries entries) {
+        entries.add(ANCIENT_LONGSWORD);
+        entries.add(ANCIENT_GREATAXE);
+    }
+
     public static void registerModItems() {
         AncientArch.LOGGER.info("Registering Mod Items for " + AncientArch.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodAndDrinkItemsGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToCombatItemsGroup);
     }
 }
