@@ -19,13 +19,13 @@ public class AncientArchClient implements ClientModInitializer, LibyModelLoaderE
     public void onLibyModelLoaderInitialize() {
         this.liby$registerSpecialItemModel(
                 ModItems.ANCIENT_LONGSWORD,
-                new ModelIdentifier(AncientArch.MOD_ID, "ancient_longsword_3d", "inventory"),
-                ModelTransformationMode.GROUND, ModelTransformationMode.GUI, ModelTransformationMode.FIXED
+                new ModelIdentifier(AncientArch.MOD_ID, "ancient_longsword_inventory", "inventory"),
+                ModelTransformationMode.FIRST_PERSON_LEFT_HAND, ModelTransformationMode.FIRST_PERSON_RIGHT_HAND, ModelTransformationMode.THIRD_PERSON_LEFT_HAND, ModelTransformationMode.THIRD_PERSON_RIGHT_HAND, ModelTransformationMode.FIXED
         );
         this.liby$registerSpecialItemModel(
                 ModItems.ANCIENT_GREATAXE,
-                new ModelIdentifier(AncientArch.MOD_ID, "ancient_greataxe_3d", "inventory"),
-                ModelTransformationMode.GROUND, ModelTransformationMode.GUI, ModelTransformationMode.FIXED
+                new ModelIdentifier(AncientArch.MOD_ID, "ancient_greataxe_inventory", "inventory"),
+                ModelTransformationMode.FIRST_PERSON_LEFT_HAND, ModelTransformationMode.FIRST_PERSON_RIGHT_HAND, ModelTransformationMode.THIRD_PERSON_LEFT_HAND, ModelTransformationMode.THIRD_PERSON_RIGHT_HAND, ModelTransformationMode.FIXED
         );
 
     }
