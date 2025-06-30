@@ -26,8 +26,14 @@ public class ModItems {
     public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings()));
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ModFoodComponents.PINEAPPLE)));
-    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ModToolMaterial.ANCIENT_INGOT, 8f,-3f, new FabricItemSettings()));
+
+    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ModToolMaterial.ANCIENT_INGOT, 9f,-3f, new FabricItemSettings()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new SwordItem(ModToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings()));
+
+    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 
@@ -55,6 +61,10 @@ public class ModItems {
     private static void addItemsToCombatItemsGroup(FabricItemGroupEntries entries) {
         entries.add(ANCIENT_LONGSWORD);
         entries.add(ANCIENT_GREATAXE);
+        entries.add(ANCIENT_HELMET);
+        entries.add(ANCIENT_CHESTPLATE);
+        entries.add(ANCIENT_LEGGINGS);
+        entries.add(ANCIENT_BOOTS);
     }
 
     public static void registerModItems() {

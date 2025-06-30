@@ -15,8 +15,14 @@
 	"icon": "assets/ancient-arch/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"client": [
+			"frosta.ancientarch.AncientArchClient"
+		],
 		"main": [
 			"frosta.ancientarch.AncientArch"
+		],
+		"liby_model_loader": [
+			"frosta.ancientarch.AncientArchClient"
 		],
 		"fabric-datagen": [
 			"frosta.ancientarch.AncientArchDataGenerator"

@@ -3,9 +3,9 @@ package frosta.ancientarch;
 import frosta.ancientarch.block.ModBlocks;
 import frosta.ancientarch.item.ModItemGroups;
 import frosta.ancientarch.item.ModItems;
+import nazario.liby.api.LibyModelLoaderEntrypoint;
 import net.fabricmc.api.ModInitializer;
 
-import net.minecraft.state.property.DirectionProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

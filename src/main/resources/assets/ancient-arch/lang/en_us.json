@@ -18,6 +18,11 @@
   "item.ancient-arch.ancient_greataxe": "Ancient Greataxe",
   "item.ancient-arch.ancient_longsword": "Ancient Longsword",
 
+  "item.ancient-arch.ancient_helmet": "Ancient Helmet",
+  "item.ancient-arch.ancient_chestplate": "Ancient Chestplate",
+  "item.ancient-arch.ancient_leggings": "Ancient Leggings",
+  "item.ancient-arch.ancient_boots": "Ancient Boots",
+
 
   "block.ancient-arch.cracked_end_portal_frame": "Cracked End Portal Frame",
   "block.ancient-arch.cracked_end_portal_frame_used": "Used Cracked End Portal Frame",
