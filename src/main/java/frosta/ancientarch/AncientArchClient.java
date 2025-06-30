@@ -19,10 +19,8 @@ public class AncientArchClient implements ClientModInitializer, LibyModelLoaderE
         this.liby$registerSpecialItemModel(
                 ModItems.ANCIENT_LONGSWORD,
                 new ModelIdentifier(AncientArch.MOD_ID, "YOURITEM_3D", "inventory"),
-                ModelTransformation.Mode.GUI, ModelTransformation.Mode.GROUND, ModelTransformation.Mode.FIXED
+                ModelTransformation.mode.GUI, ModelTransformation.Mode.GROUND, ModelTransformation.Mode.FIXED
         );
 
     }
 }
-
-WELL SHIT FUXK MY LIFE
