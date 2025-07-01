@@ -21,7 +21,7 @@
 		"main": [
 			"frosta.ancientarch.AncientArch"
 		],
-		"liby_model_loader": [
+		"liby_asset_loader": [
 			"frosta.ancientarch.AncientArchClient"
 		],
 		"fabric-datagen": [

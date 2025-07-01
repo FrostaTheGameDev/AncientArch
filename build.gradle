@@ -20,6 +20,9 @@ repositories {
 		name = "Ladysnake Mods"
 		url = 'https://maven.ladysnake.org/releases'
 	}
+	flatDir {
+		dirs "libs"
+	}
 
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
@@ -35,7 +38,7 @@ fabricApi {
 }
 
 dependencies {
-	modImplementation "maven.modrinth:liby:1.20.1-build-2.0"
+	modImplementation "mod.nazario.liby:liby-0.0.0.0-1.20.1"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.3"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.3"
 
