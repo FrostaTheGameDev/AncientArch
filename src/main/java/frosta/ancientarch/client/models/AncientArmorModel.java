@@ -11,6 +11,7 @@ public class AncientArmorModel extends EntityModel<LivingEntity> {
 	public final ModelPart head;
 	public final ModelPart horns;
 	public final ModelPart body;
+	public final ModelPart waist;
 	public final ModelPart rightArm;
 	public final ModelPart leftArm;
 	public final ModelPart rightLeg;
@@ -20,6 +21,7 @@ public class AncientArmorModel extends EntityModel<LivingEntity> {
 		this.head = this.root.getChild("head");
 		this.horns = this.head.getChild("horns");
 		this.body = this.root.getChild("body");
+		this.waist = this.root.getChild("waist");
 		this.rightArm = this.root.getChild("rightArm");
 		this.leftArm = this.root.getChild("leftArm");
 		this.rightLeg = this.root.getChild("rightLeg");
@@ -41,11 +43,13 @@ public class AncientArmorModel extends EntityModel<LivingEntity> {
 
 		ModelPartData cube_r3 = horns.addChild("cube_r3", ModelPartBuilder.create().uv(0, 0).cuboid(-1.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(-0.1F)), ModelTransform.of(-5.0463F, 0.0682F, -0.0625F, -0.7182F, 0.2046F, 0.2284F));
 
-		ModelPartData body = root.addChild("body", ModelPartBuilder.create().uv(16, 16).cuboid(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new Dilation(1.0F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
+		ModelPartData body = root.addChild("body", ModelPartBuilder.create().uv(16, 16).cuboid(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new Dilation(0.65F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
 
-		ModelPartData rightArm = root.addChild("rightArm", ModelPartBuilder.create().uv(40, 16).cuboid(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(1.25F)), ModelTransform.pivot(-5.0F, -22.0F, 0.0F));
+		ModelPartData waist = root.addChild("waist", ModelPartBuilder.create().uv(33, 6).cuboid(-4.0F, 7.0F, -2.0F, 8.0F, 5.0F, 4.0F, new Dilation(0.6F)), ModelTransform.pivot(0.0F, -24.0F, 0.0F));
 
-		ModelPartData leftArm = root.addChild("leftArm", ModelPartBuilder.create().uv(40, 16).mirrored().cuboid(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(1.25F)).mirrored(false), ModelTransform.pivot(5.0F, -22.0F, 0.0F));
+		ModelPartData rightArm = root.addChild("rightArm", ModelPartBuilder.create().uv(40, 16).cuboid(-3.0F, -2.0F, -2.0F, 4.0F, 6.0F, 4.0F, new Dilation(1.25F)), ModelTransform.pivot(-5.0F, -22.0F, 0.0F));
+
+		ModelPartData leftArm = root.addChild("leftArm", ModelPartBuilder.create().uv(40, 16).mirrored().cuboid(-1.0F, -2.0F, -2.0F, 4.0F, 6.0F, 4.0F, new Dilation(1.25F)).mirrored(false), ModelTransform.pivot(5.0F, -22.0F, 0.0F));
 
 		ModelPartData rightLeg = root.addChild("rightLeg", ModelPartBuilder.create().uv(0, 16).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.5F)), ModelTransform.pivot(-1.9F, -12.0F, 0.0F));
 

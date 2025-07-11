@@ -26,8 +26,8 @@ public class ArchItems {
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
 
-    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ArchToolMaterial.ANCIENT_INGOT, 9f,-3f, new FabricItemSettings()));
-    public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new SwordItem(ArchToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings()));
+    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 9,-3f, new FabricItemSettings()));
+    public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings()));
 
     public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
