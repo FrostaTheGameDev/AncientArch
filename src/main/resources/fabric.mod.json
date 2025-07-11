@@ -16,16 +16,16 @@
 	"environment": "*",
 	"entrypoints": {
 		"client": [
-			"frosta.ancientarch.AncientArchClient"
+          "frosta.ancientarch.client.AncientArchClient"
 		],
 		"main": [
 			"frosta.ancientarch.AncientArch"
 		],
 		"liby_asset_loader": [
-			"frosta.ancientarch.AncientArchClient"
+          "frosta.ancientarch.client.AncientArchClient"
 		],
 		"fabric-datagen": [
-			"frosta.ancientarch.AncientArchDataGenerator"
+			"frosta.ancientarch.datagen.AncientArchDataGenerator"
 		]
 	},
 	"mixins": [
