@@ -36,7 +36,6 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.ancient-arch.cracked_end_portal_frame", "Cracked End Portal Frame");
         translationBuilder.add("block.ancient-arch.cracked_end_portal_frame_used", "Used Cracked End Portal Frame");
         translationBuilder.add("block.ancient-arch.ancient_block", "Ancient Block");
-        translationBuilder.add("itemgroup.porcelain_group", "Moldable");
-        translationBuilder.add("itemgroup.ancient_building_block_group", "Ancient Building Blocks");
+        translationBuilder.add("itemgroup.ancient_arch", "Ancient Arch");
     }
 }

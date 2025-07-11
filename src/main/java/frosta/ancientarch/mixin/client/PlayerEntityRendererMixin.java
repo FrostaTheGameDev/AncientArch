@@ -2,7 +2,7 @@ package frosta.ancientarch.mixin.client;
 
 import frosta.ancientarch.client.models.AncientArmorModel;
 import frosta.ancientarch.client.render.AncientArmorFeatureRenderer;
-import frosta.ancientarch.item.custom.AncientArmorItem;
+import frosta.ancientarch.item.AncientArmorItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

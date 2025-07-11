@@ -2,7 +2,7 @@ package frosta.ancientarch.client;
 
 
 import frosta.ancientarch.AncientArch;
-import frosta.ancientarch.item.ModItems;
+import frosta.ancientarch.item.ArchItems;
 import nazario.liby.api.client.entrypoint.LibyAssetLoadingEntrypoint;
 import nazario.liby.api.client.entrypoint.LibyAssetRegistryAccess;
 import net.fabricmc.api.ClientModInitializer;
@@ -17,11 +17,11 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
 
     @Override
     public void onLibyAssetLoading(LibyAssetRegistryAccess libyAssetRegistryAccess) {
-        libyAssetRegistryAccess.addItemPredicateModel(ModItems.ANCIENT_GREATAXE, new ModelIdentifier(AncientArch.MOD_ID, "ancient_greataxe_inventory", "inventory"), (mode) -> switch(mode) {
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.ANCIENT_GREATAXE, new ModelIdentifier(AncientArch.MOD_ID, "ancient_greataxe_inventory", "inventory"), (mode) -> switch(mode) {
             case GUI, GROUND -> true;
             default -> false;
         });
-        libyAssetRegistryAccess.addItemPredicateModel(ModItems.ANCIENT_LONGSWORD, new ModelIdentifier(AncientArch.MOD_ID, "ancient_longsword_inventory", "inventory"), (mode) -> switch(mode) {
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.ANCIENT_LONGSWORD, new ModelIdentifier(AncientArch.MOD_ID, "ancient_longsword_inventory", "inventory"), (mode) -> switch(mode) {
             case GUI, GROUND -> true;
             default -> false;
         });

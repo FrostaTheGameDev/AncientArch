@@ -1,8 +1,8 @@
 package frosta.ancientarch;
 
-import frosta.ancientarch.block.ModBlocks;
-import frosta.ancientarch.item.ModItemGroups;
-import frosta.ancientarch.item.ModItems;
+import frosta.ancientarch.block.ArchBlocks;
+import frosta.ancientarch.item.ArchItemGroups;
+import frosta.ancientarch.item.ArchItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -21,8 +21,8 @@ public class AncientArch implements ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
-		ModItemGroups.registerItemGroups();
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
+		ArchItemGroups.registerItemGroups();
+		ArchItems.registerModItems();
+		ArchBlocks.registerModBlocks();
 	}
 }

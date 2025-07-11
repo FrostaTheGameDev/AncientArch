@@ -1,6 +1,6 @@
 package frosta.ancientarch.mixin.client;
 
-import frosta.ancientarch.item.custom.AncientArmorItem;
+import frosta.ancientarch.item.AncientArmorItem;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.feature.ArmorFeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;

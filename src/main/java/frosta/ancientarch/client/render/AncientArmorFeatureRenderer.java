@@ -2,7 +2,7 @@ package frosta.ancientarch.client.render;
 
 import frosta.ancientarch.AncientArch;
 import frosta.ancientarch.client.models.AncientArmorModel;
-import frosta.ancientarch.item.custom.AncientArmorItem;
+import frosta.ancientarch.item.AncientArmorItem;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;

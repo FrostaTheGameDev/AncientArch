@@ -9,9 +9,9 @@ import net.minecraft.sound.SoundEvents;
 
 import java.util.function.Supplier;
 
-public enum ModArmorMaterials implements ArmorMaterial {
+public enum ArchArmorMaterials implements ArmorMaterial {
     ANCIENT("ancient", 25, new int[] {3, 8, 6, 3 }, 19,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,2.5f, 0f,() -> Ingredient.ofItems(ModItems.ANCIENT_INGOT));
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,2.5f, 0f,() -> Ingredient.ofItems(ArchItems.ANCIENT_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -24,8 +24,8 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY = { 11, 16, 15, 13 };
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
-                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    ArchArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
+                       float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

@@ -1,4 +1,4 @@
-package frosta.ancientarch.item.custom;
+package frosta.ancientarch.item;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
