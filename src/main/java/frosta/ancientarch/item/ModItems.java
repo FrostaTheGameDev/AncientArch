@@ -1,6 +1,7 @@
 package frosta.ancientarch.item;
 
 import frosta.ancientarch.AncientArch;
+import frosta.ancientarch.item.custom.AncientArmorItem;
 import frosta.ancientarch.item.custom.HammerAndChiselItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -30,10 +31,10 @@ public class ModItems {
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ModToolMaterial.ANCIENT_INGOT, 9f,-3f, new FabricItemSettings()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new SwordItem(ModToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings()));
 
-    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new ArmorItem(ModArmorMaterials.ANCIENT_INGOT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new AncientArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new AncientArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new AncientArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new AncientArmorItem(ModArmorMaterials.ANCIENT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 
@@ -67,11 +68,16 @@ public class ModItems {
         entries.add(ANCIENT_BOOTS);
     }
 
+    private static void addItemsToToolsItemsGroup(FabricItemGroupEntries entries) {
+        entries.add(HAMMER_AND_CHISEL);
+    }
+
     public static void registerModItems() {
         AncientArch.LOGGER.info("Registering Mod Items for " + AncientArch.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientItemGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodAndDrinkItemsGroup);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToCombatItemsGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::addItemsToToolsItemsGroup);
     }
 }

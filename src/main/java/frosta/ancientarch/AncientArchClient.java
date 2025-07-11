@@ -5,8 +5,7 @@ import frosta.ancientarch.item.ModItems;
 import nazario.liby.api.client.entrypoint.LibyAssetLoadingEntrypoint;
 import nazario.liby.api.client.entrypoint.LibyAssetRegistryAccess;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.render.model.json.ModelTransformation;
-import net.minecraft.client.render.model.json.ModelTransformationMode;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.util.ModelIdentifier;
 
 public class AncientArchClient implements ClientModInitializer, LibyAssetLoadingEntrypoint {
