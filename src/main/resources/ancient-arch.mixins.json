@@ -3,7 +3,9 @@
   "package": "frosta.ancientarch.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "client.ArmorFeatureRendererMixin"
+    "client.ArmorFeatureRendererMixin",
+    "client.ArmorStandEntityRendererMixin",
+    "client.PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
