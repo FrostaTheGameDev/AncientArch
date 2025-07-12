@@ -1,5 +1,6 @@
 package frosta.ancientarch.item;
 
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -7,7 +8,7 @@ import java.util.function.Supplier;
 
 public enum ArchToolMaterial implements ToolMaterial {
     ANCIENT_INGOT(3,2000,5,0.5f,26,
-            () ->Ingredient.ofItems(ArchItems.ANCIENT_INGOT));
+            () ->Ingredient.ofItems(Items.NETHERITE_SCRAP));
 
     private final int miningLevel;
     private final int itemDurability;

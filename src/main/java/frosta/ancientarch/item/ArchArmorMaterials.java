@@ -3,6 +3,8 @@ package frosta.ancientarch.item;
 import frosta.ancientarch.AncientArch;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -11,7 +13,7 @@ import java.util.function.Supplier;
 
 public enum ArchArmorMaterials implements ArmorMaterial {
     ANCIENT("ancient", 25, new int[] {3, 8, 6, 3 }, 19,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,2.5f, 0f,() -> Ingredient.ofItems(ArchItems.ANCIENT_INGOT));
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,2.5f, 0f,() -> Ingredient.ofItems(Items.NETHERITE_SCRAP));
 
     private final String name;
     private final int durabilityMultiplier;
