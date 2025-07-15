@@ -1,7 +1,11 @@
 package frosta.ancientarch.item;
 
+import com.google.common.collect.Multimap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -38,8 +42,18 @@ public class LongswordItem extends SwordItem {
     }
 
     @Override
-    public float getAttackDamage() {
-        return currentAttackDamage;
+    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
+        Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getAttributeModifiers(slot);
+        if (slot == EquipmentSlot.MAINHAND) {
+            modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    new EntityAttributeModifier(
+                            "Weapon modifier",
+                            currentAttackDamage,
+                            EntityAttributeModifier.Operation.ADDITION
+                    )
+            );
+        }
+        return modifiers;
     }
 
     public static boolean hasFullSet(PlayerEntity player) {
