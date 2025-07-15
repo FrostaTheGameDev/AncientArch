@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ArchToolMaterial implements ToolMaterial {
-    ANCIENT_INGOT(3,2000,5,0.5f,26,
+    ANCIENT_INGOT(4,2000,10,0.5f,26,
             () ->Ingredient.ofItems(Items.NETHERITE_SCRAP));
 
     private final int miningLevel;
