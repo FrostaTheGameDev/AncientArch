@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 
 public class LongswordItem extends SwordItem {
     private static final int BUFF_INTERVAL_TICKS = 20; // 1 second (20 ticks)
-    private static final float BUFFED_ATTACK_DAMAGE = 12.5f; // example buffed value
-    private static final float NORMAL_ATTACK_DAMAGE = 9.5f; // example normal value
+    private static final float BUFFED_ATTACK_DAMAGE = 11.5f; // example buffed value
+    private static final float NORMAL_ATTACK_DAMAGE = 8.5f; // example normal value
 
     private int tickCounter = 0;
     private float currentAttackDamage;
@@ -41,20 +41,6 @@ public class LongswordItem extends SwordItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    @Override
-    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
-        Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getAttributeModifiers(slot);
-        if (slot == EquipmentSlot.MAINHAND) {
-            modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE,
-                    new EntityAttributeModifier(
-                            "Weapon modifier",
-                            currentAttackDamage,
-                            EntityAttributeModifier.Operation.ADDITION
-                    )
-            );
-        }
-        return modifiers;
-    }
 
     public static boolean hasFullSet(PlayerEntity player) {
         return player.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof AncientArmorItem
