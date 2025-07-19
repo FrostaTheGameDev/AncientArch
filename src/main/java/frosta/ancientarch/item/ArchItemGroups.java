@@ -14,7 +14,7 @@ public class ArchItemGroups {
     public static final ItemGroup ANCIENT_ARCH = Registry.register(Registries.ITEM_GROUP,
             new Identifier(AncientArch.MOD_ID, "ancient_arch"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ancient_arch"))
-                    .icon(() -> new ItemStack(ArchItems.ANCIENT_GREATAXE)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ArchItems.EMPTY_CORE)).entries((displayContext, entries) -> {
                         entries.add(ArchItems.UNREFINED_ANCIENT_AMALGAM);
                         entries.add(ArchItems.ANCIENT_INGOT);
                         entries.add(ArchBlocks.ANCIENT_BLOCK);
@@ -36,6 +36,9 @@ public class ArchItemGroups {
                         entries.add(ArchItems.ANCIENT_CHESTPLATE);
                         entries.add(ArchItems.ANCIENT_LEGGINGS);
                         entries.add(ArchItems.ANCIENT_BOOTS);
+                        entries.add(ArchItems.GAUNTLET_CORE);
+                        entries.add(ArchItems.UNSTABLE_CORE);
+                        entries.add(ArchItems.EMPTY_CORE);
                     }).build());
 
 

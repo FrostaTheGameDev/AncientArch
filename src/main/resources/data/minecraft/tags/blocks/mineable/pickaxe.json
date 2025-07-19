@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ancient-arch:ancient_block"
+    "ancient-arch:ancient_block",
+    "ancient-arch:kiln"
   ]
 }

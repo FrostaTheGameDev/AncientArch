@@ -1,9 +1,7 @@
 package frosta.ancientarch.block.custom;
 
 import frosta.ancientarch.block.ArchBlocks;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.MudBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;

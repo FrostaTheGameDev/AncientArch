@@ -23,6 +23,8 @@ public static final Block WET_PORCELAIN_BLOCK = registerBlock("wet_porcelain_blo
         new WetPorcelainBlock(FabricBlockSettings.copyOf(Blocks.MUD)));
 public static final Block DRIED_PORCELAIN_BLOCK = registerBlock("dried_porcelain_block",
         new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
+    public static final Block KILN = registerBlock("kiln",
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

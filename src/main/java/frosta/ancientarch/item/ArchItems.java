@@ -25,6 +25,9 @@ public class ArchItems {
     public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings()));
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings()));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
+    public static final Item GAUNTLET_CORE = registerItem("gauntlet_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1)));
+    public static final Item UNSTABLE_CORE = registerItem("unstable_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1)));
+    public static final Item EMPTY_CORE = registerItem("empty_core", new Item(new FabricItemSettings().maxCount(1)));
 
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 9,-2.9f, new FabricItemSettings()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 7,-2.5f,  new FabricItemSettings()));
