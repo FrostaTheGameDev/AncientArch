@@ -33,7 +33,7 @@ public class ArchItems {
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
             new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
-    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-2.9f, new FabricItemSettings().fireproof()));
+    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 8,-2.5f,  new FabricItemSettings().fireproof()));
 
     public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
