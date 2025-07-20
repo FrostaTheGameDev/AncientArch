@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "ancient-arch:pineapple"
+    },
+    "title": "WHO LIVES IN A PINEAPPLE UNDER THE SEA",
+    "description": "Obtain PINEAPPLE",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "ancient-arch:ancient-arch",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ancient-arch:pineapple"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

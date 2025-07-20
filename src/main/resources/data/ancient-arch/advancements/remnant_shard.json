@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "ancient-arch:remnant_shard"
+    },
+    "title": "Why would you do that?",
+    "description": "Obtain a Remnant Shard from an end portal frame",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "ancient-arch:ancient-arch",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ancient-arch:remnant_shard"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

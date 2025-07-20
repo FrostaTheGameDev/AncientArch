@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "ancient-arch:block/pineapple_stage2"
+  }
+}

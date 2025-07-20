@@ -4,7 +4,7 @@
     "item": "minecraft:iron_sword"
   },
   "addition": {
-    "item": "ancient-arch:pineapple"
+    "item": "minecraft:barrier"
   },
   "template": {
     "item": "ancient-arch:unconditioned_ancient_mould"

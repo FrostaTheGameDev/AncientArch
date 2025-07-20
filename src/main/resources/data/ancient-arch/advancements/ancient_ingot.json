@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "ancient-arch:ancient_ingot"
+    },
+    "title": "A new chapter",
+    "description": "Obtain an Ancient Ingot",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "ancient-arch:ancient-arch",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ancient-arch:ancient_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

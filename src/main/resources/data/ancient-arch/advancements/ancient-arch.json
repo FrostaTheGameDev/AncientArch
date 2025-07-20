@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "ancient-arch:ancient_block"
+    },
+    "title": "Ancient Arch",
+    "description": "Where the lies of the gods become quiet truth",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/blackstone.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crafting_table"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
