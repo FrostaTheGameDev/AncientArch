@@ -1,11 +1,13 @@
 package frosta.ancientarch.item;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -41,6 +43,22 @@ public class LongswordItem extends SwordItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
+    @Override
+    public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
+        Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
+        if (slot == EquipmentSlot.MAINHAND) {
+            modifiers.removeAll(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+            modifiers.put(EntityAttributes.GENERIC_ATTACK_DAMAGE,
+                    new EntityAttributeModifier(
+                            ATTACK_DAMAGE_MODIFIER_ID,
+                            "Weapon modifier",
+                            currentAttackDamage,
+                            EntityAttributeModifier.Operation.ADDITION
+                    )
+            );
+        }
+        return modifiers;
+    }
 
     public static boolean hasFullSet(PlayerEntity player) {
         return player.getEquippedStack(EquipmentSlot.HEAD).getItem() instanceof AncientArmorItem
