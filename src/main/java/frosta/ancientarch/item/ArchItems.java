@@ -1,6 +1,7 @@
 package frosta.ancientarch.item;
 
 import frosta.ancientarch.AncientArch;
+import frosta.ancientarch.block.ArchBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -28,6 +29,9 @@ public class ArchItems {
     public static final Item GAUNTLET_CORE = registerItem("gauntlet_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1)));
     public static final Item UNSTABLE_CORE = registerItem("unstable_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1)));
     public static final Item EMPTY_CORE = registerItem("empty_core", new Item(new FabricItemSettings().maxCount(1)));
+
+    public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
+            new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 9,-2.9f, new FabricItemSettings()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 7,-2.5f,  new FabricItemSettings()));

@@ -2,6 +2,7 @@ package frosta.ancientarch.block;
 
 import frosta.ancientarch.AncientArch;
 import frosta.ancientarch.block.custom.CrackedEndPortalFrameBlock;
+import frosta.ancientarch.block.custom.PineappleCropBlock;
 import frosta.ancientarch.block.custom.WetPorcelainBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -25,6 +26,8 @@ public static final Block DRIED_PORCELAIN_BLOCK = registerBlock("dried_porcelain
         new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
     public static final Block KILN = registerBlock("kiln",
             new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+    public static final Block PINEAPPLE_CROP = Registry.register(Registries.BLOCK,new Identifier(AncientArch.MOD_ID, "pineapple_crop"),
+           new PineappleCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

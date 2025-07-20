@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ancient-arch:pineapple"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "ancient-arch:pineapple_seeds"
+  }
+}
