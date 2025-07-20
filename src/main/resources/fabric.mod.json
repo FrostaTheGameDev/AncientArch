@@ -3,9 +3,9 @@
 	"id": "ancient-arch",
 	"version": "${version}",
 	"name": "Ancient Arch",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "",
 	"authors": [
-		"Me!"
+		"Frosta"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
