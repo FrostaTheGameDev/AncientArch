@@ -32,6 +32,8 @@ public class ArchItemGroups {
                         entries.add(ArchItems.CONDITIONED_WEAPON_MOULD);
                         entries.add(ArchItems.ANCIENT_LONGSWORD);
                         entries.add(ArchItems.ANCIENT_GREATAXE);
+                        entries.add(ArchItems.FALSE_APPLE);
+                        entries.add(ArchItems.HEAD_CHOPPER);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
                         entries.add(ArchItems.ANCIENT_HELMET);
                         entries.add(ArchItems.ANCIENT_CHESTPLATE);
@@ -39,6 +41,7 @@ public class ArchItemGroups {
                         entries.add(ArchItems.ANCIENT_BOOTS);
                         entries.add(ArchItems.GAUNTLET_CORE);
                         entries.add(ArchItems.UNSTABLE_CORE);
+                        entries.add(ArchItems.HOLY_CORE);
                         entries.add(ArchItems.EMPTY_CORE);
                     }).build());
 

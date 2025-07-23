@@ -3,9 +3,13 @@
 	"id": "ancient-arch",
 	"version": "${version}",
 	"name": "Ancient Arch",
-	"description": "",
+	"description": "Where the lies of god become quiet truth",
 	"authors": [
-		"Frosta"
+		"FrostaTheGameDev",
+		"TheWitherTuber",
+		"Loqor",
+		"Eyalego",
+		"MiniBolts/Krii"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

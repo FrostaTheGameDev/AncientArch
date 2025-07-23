@@ -15,6 +15,7 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add("item.ancient-arch.silica_gel_packet", "Silica Gel Packet");
         translationBuilder.add("item.ancient-arch.moldable_porcelain", "Moldable Porcelain");
+        translationBuilder.add("item.ancient-arch.porcelain_totem","Porcelain Totem");
         translationBuilder.add("item.ancient-arch.clay_slip", "Clay Slip");
         translationBuilder.add("item.ancient-arch.silica", "Silica");
         translationBuilder.add("item.ancient-arch.remnant_shard", "Remnant Shard");
@@ -24,11 +25,18 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("item.ancient-arch.conditioned_armor_mould", "Conditioned Armor Mould");
         translationBuilder.add("item.ancient-arch.conditioned_weapon_mould", "Conditioned Weapon Mould");
         translationBuilder.add("item.ancient-arch.hammer_and_chisel", "Hammer N' Chisel");
+        translationBuilder.add("item.ancient-arch.holy_core","Holy Core");
+        translationBuilder.add("item.ancient-arch.gauntlet_core","Gauntlet Core");
+        translationBuilder.add("item.ancient-arch.unstable_core","Unstable Core");
+        translationBuilder.add("item.ancient-arch.empty_core", "Empty Core");
+        translationBuilder.add("item.ancient-arch.pineapple_seeds","Pineapple Seeds");
         translationBuilder.add("item.ancient-arch.ancient_ingot", "Ancient Ingot");
         translationBuilder.add("item.ancient-arch.unrefined_ancient_amalgam", "Unrefined Ancient Amalgam");
         translationBuilder.add("item.ancient-arch.pineapple", "Pineapple");
+        translationBuilder.add("item.ancient-arch.false_apple", "False Apple");
         translationBuilder.add("item.ancient-arch.ancient_greataxe", "Ancient Greataxe");
         translationBuilder.add("item.ancient-arch.ancient_longsword", "Ancient Longsword");
+        translationBuilder.add("item.ancient-arch.head_chopper", "Head Chopper");
         translationBuilder.add("item.ancient-arch.ancient_helmet", "Ancient Helmet");
         translationBuilder.add("item.ancient-arch.ancient_chestplate", "Ancient Chestplate");
         translationBuilder.add("item.ancient-arch.ancient_leggings", "Ancient Leggings");
@@ -36,6 +44,9 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("block.ancient-arch.cracked_end_portal_frame", "Cracked End Portal Frame");
         translationBuilder.add("block.ancient-arch.cracked_end_portal_frame_used", "Used Cracked End Portal Frame");
         translationBuilder.add("block.ancient-arch.ancient_block", "Ancient Block");
+        translationBuilder.add( "block.ancient-arch.wet_porcelain_block", "Wet Porcelain Block");
+        translationBuilder.add( "block.ancient-arch.dried_porcelain_block", "Dried Porcelain Block");
+        translationBuilder.add( "block.ancient-arch.kiln", "Kiln");
         translationBuilder.add("itemgroup.ancient_arch", "Ancient Arch");
     }
 }

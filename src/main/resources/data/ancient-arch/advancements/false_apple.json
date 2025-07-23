@@ -1,10 +1,10 @@
 {
   "display": {
     "icon": {
-      "item": "ancient-arch:silica_gel_packet"
+      "item": "ancient-arch:false_apple"
     },
-    "title": "It said do not eat for a reason",
-    "description": "Eat a Silica Packet",
+    "title": "False Works",
+    "description": "Eat a False apple",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
@@ -18,13 +18,13 @@
         "items": [
           {
             "items": [
-              "ancient-arch:silica_gel_packet"
+              "ancient-arch:false_apple"
             ]
           }
         ],
         "item": {
           "items": [
-            "ancient-arch:silica_gel_packet"
+            "ancient-arch:false_apple"
           ]
         }
       }

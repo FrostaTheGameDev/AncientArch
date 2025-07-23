@@ -28,6 +28,10 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.HEAD_CHOPPER, new ModelIdentifier(AncientArch.MOD_ID, "head_chopper_inventory", "inventory"), (mode) -> switch(mode) {
+            case GUI, GROUND -> true;
+            default -> false;
+        });
 
         BlockRenderLayerMap.INSTANCE.putBlock(ArchBlocks.PINEAPPLE_CROP, RenderLayer.getCutout());
     }
