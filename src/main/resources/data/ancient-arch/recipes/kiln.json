@@ -9,7 +9,7 @@
       "item": "minecraft:smooth_stone"
     },
     "%": {
-      "item": "minecraft:lava_bucket"
+      "item": "minecraft:barrier"
     }
   },
   "pattern": [
