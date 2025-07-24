@@ -1,8 +1,10 @@
 package frosta.ancientarch;
 
 import frosta.ancientarch.block.ArchBlocks;
+import frosta.ancientarch.block.blockentity.ArchBlockEntitys;
 import frosta.ancientarch.item.ArchItemGroups;
 import frosta.ancientarch.item.ArchItems;
+import frosta.ancientarch.screen.ArchScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,6 +20,8 @@ public class AncientArch implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ArchBlockEntitys.registerBlockEntities();
+		ArchScreenHandlers.registerScreenHandlers();
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
