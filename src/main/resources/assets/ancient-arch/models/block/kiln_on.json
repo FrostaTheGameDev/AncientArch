@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "front": "ancient-arch:block/kiln_front",
+    "front": "ancient-arch:block/kiln_front_on",
     "side": "ancient-arch:block/kiln_side",
     "top": "ancient-arch:block/kiln_top",
     "bottom": "ancient-arch:block/kiln_bottom"

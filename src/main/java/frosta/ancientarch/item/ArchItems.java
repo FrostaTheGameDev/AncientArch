@@ -26,8 +26,7 @@ public class ArchItems {
     public static final Item GAUNTLET_CORE = registerItem("gauntlet_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1).fireproof()));
     public static final Item UNSTABLE_CORE = registerItem("unstable_core", new UnstableCoreItem(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1).fireproof()));
     public static final Item EMPTY_CORE = registerItem("empty_core", new Item(new FabricItemSettings().maxCount(1)));
-    public static final Item HOLY_CORE = registerItem("holy_core", new Item(new FabricItemSettings().maxCount(1).rarity(Rarity.EPIC).fireproof()));
-    public static final Item PORCELAIN_TOTEM = registerItem("porcelain_totem", new Item(new FabricItemSettings()));
+    public static final Item HOLY_CORE = registerItem("holy_core", new HolyCoreItem(new FabricItemSettings().maxCount(1).rarity(Rarity.EPIC).fireproof()));
 
     public static final Item FALSE_APPLE = registerItem("false_apple", new Item(new FabricItemSettings().food(ArchFoodComponents.FALSE_APPLE).rarity(Rarity.EPIC).fireproof().maxCount(5)));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
