@@ -31,9 +31,9 @@ public class KilnBlockScreenHandler extends ScreenHandler {
         this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((KilnBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory, 0, 116, 11));
+        this.addSlot(new Slot(inventory, 0, 50, 11));
         this.addSlot(new Slot(inventory, 1, 80, 11));
-        this.addSlot(new Slot(inventory, 2, 50, 11));
+        this.addSlot(new Slot(inventory, 2, 116, 11));
         this.addSlot(new Slot(inventory, 3, 80, 59));
 
 
