@@ -1,5 +1,6 @@
 package frosta.ancientarch.block.blockentity;
 
+import frosta.ancientarch.block.ArchBlocks;
 import frosta.ancientarch.item.ArchItems;
 import frosta.ancientarch.screen.KilnBlockScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
@@ -24,10 +25,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
-    private static final int INPUT_SLOT = 0;              // Vial of Ink
-    private static final int GOLDEN_APPLE_SLOT = 1;       // Golden Apple
-    private static final int OUTPUT_SLOT = 2;             // Ink Dipped Apple
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private static final int ANCIENT_MOULD_SLOT = 0;              // Vial of Ink
+    private static final int CHARCOAL_SLOT = 1;
+    private static final int ANCIENT_BLOCK_SLOT = 2;
+    private static final int OUTPUT_SLOT = 3;             // Ink Dipped Apple
 
     private int progress = 0;
     private int maxProgress = 72;
@@ -123,8 +125,9 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     }
 
     private void craftItem() {
-        this.removeStack(INPUT_SLOT, 1);
-        this.removeStack(GOLDEN_APPLE_SLOT, 1);
+        this.removeStack(ANCIENT_MOULD_SLOT, 1);
+        this.removeStack(CHARCOAL_SLOT, 64);
+        this.removeStack(ANCIENT_BLOCK_SLOT, 4);
 
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
         ItemStack currentOutput = getStack(OUTPUT_SLOT);
@@ -145,14 +148,16 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     }
 
     private boolean hasRecipe() {
-        ItemStack vialOfInk = getStack(INPUT_SLOT);
-        ItemStack goldenApple = getStack(GOLDEN_APPLE_SLOT);
+        ItemStack AncientMould = getStack(ANCIENT_MOULD_SLOT);
+        ItemStack Charcoal = getStack(CHARCOAL_SLOT);
+        ItemStack AncientBlock = getStack(ANCIENT_BLOCK_SLOT);
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
 
-        boolean hasInk = vialOfInk.getItem() == ArchItems.CONDITIONED_ANCIENT_MOULD;
-        boolean hasGoldenApple = goldenApple.getItem() == ArchItems.ANCIENT_INGOT;
+        boolean hasAncientMould = AncientMould.getItem() == ArchItems.CONDITIONED_ANCIENT_MOULD;
+        boolean hasCharcoal = Charcoal.getItem() == Items.CHARCOAL;
+        boolean hasAncientBlock = AncientBlock.getItem() == ArchItems.ANCIENT_INGOT;
 
-        return hasInk && hasGoldenApple &&
+        return hasAncientMould && hasCharcoal && hasAncientBlock &&
                 canInsertAmountIntoOutputSlot(result) &&
                 canInsertItemIntoOutputSlot(result.getItem());
     }
