@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ArchScreenHandlers {
     public static final ScreenHandlerType<KilnBlockScreenHandler> KILN_BLOCK_SCREEN_HANDLER =
-        Registry.register(Registries.SCREEN_HANDLER, new Identifier(AncientArch.MOD_ID, "alchemist_stand"),
+        Registry.register(Registries.SCREEN_HANDLER, new Identifier(AncientArch.MOD_ID, "kiln"),
                 new ExtendedScreenHandlerType<>(KilnBlockScreenHandler::new));
 
     public static void registerScreenHandlers() {
