@@ -1,11 +1,12 @@
 package frosta.ancientarch.block.blockentity;
 
-import frosta.ancientarch.block.ArchBlocks;
 import frosta.ancientarch.item.ArchItems;
+import frosta.ancientarch.recipe.ArchRecipes;
+import frosta.ancientarch.recipe.KilnRecipe;
 import frosta.ancientarch.screen.KilnBlockScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -23,12 +24,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class KilnBlockEntity extends AbstractFurnaceBlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
-    private static final int ANCIENT_MOULD_SLOT = 0;              // Vial of Ink
-    private static final int CHARCOAL_SLOT = 2;
-    private static final int ANCIENT_BLOCK_SLOT = 1;
+    private static final int ANCIENT_MOULD_SLOT = 0;
+    private static final int INGOT_SLOT = 1;              // Vial of Ink
+    private static final int FUEL_SLOT = 2;
     private static final int OUTPUT_SLOT = 3;             // Ink Dipped Apple
 
     private int progress = 0;
@@ -37,7 +38,7 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     private final PropertyDelegate propertyDelegate;
 
     public KilnBlockEntity(BlockPos pos, BlockState state) {
-        super(ArchBlockEntitys.KILN_BLOCK_ENTITY, pos, state);
+        super(ArchBlockEntitys.KILN_BLOCK_ENTITY, pos, state, );
 
         this.propertyDelegate = new PropertyDelegate() {
             @Override
@@ -74,10 +75,20 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
         return Text.literal("Kiln");
     }
 
+    @Override
+    protected Text getContainerName() {
+        return null;
+    }
+
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new KilnBlockScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+    }
+
+    @Override
+    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
+        return null;
     }
 
     @Override
@@ -126,8 +137,8 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private void craftItem() {
         this.removeStack(ANCIENT_MOULD_SLOT, 1);
-        this.removeStack(ANCIENT_BLOCK_SLOT, 4);
-        this.removeStack(CHARCOAL_SLOT, 1);
+        this.removeStack(INGOT_SLOT, 4);
+        this.removeStack(FUEL_SLOT, 1);
 
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
         ItemStack currentOutput = getStack(OUTPUT_SLOT);
@@ -149,12 +160,12 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private boolean hasRecipe() {
         ItemStack AncientMould = getStack(ANCIENT_MOULD_SLOT);
-        ItemStack AncientBlock = getStack(ANCIENT_BLOCK_SLOT);
-        ItemStack Charcoal = getStack(CHARCOAL_SLOT);
+        ItemStack AncientIngot = getStack(INGOT_SLOT);
+        ItemStack Charcoal = getStack(FUEL_SLOT);
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
 
         boolean hasAncientMould = AncientMould.getItem() == ArchItems.CONDITIONED_ANCIENT_MOULD;
-        boolean hasAncientBlock = AncientBlock.getItem() == ArchItems.ANCIENT_INGOT;
+        boolean hasAncientBlock = AncientIngot.getItem() == ArchItems.ANCIENT_INGOT;
         boolean hasCharcoal = Charcoal.getItem() == Items.CHARCOAL;
 
         return hasAncientMould && hasCharcoal && hasAncientBlock &&
