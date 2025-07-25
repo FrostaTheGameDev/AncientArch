@@ -87,14 +87,14 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("alchemist_stand.progress", progress);
+        nbt.putInt("kiln.progress", progress);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("alchemist_stand.progress");
+        progress = nbt.getInt("kiln.progress");
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, KilnBlockEntity entity) {
@@ -147,10 +147,10 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     private boolean hasRecipe() {
         ItemStack vialOfInk = getStack(INPUT_SLOT);
         ItemStack goldenApple = getStack(GOLDEN_APPLE_SLOT);
-        ItemStack result = new ItemStack(ArchItems.PINEAPPLE);
+        ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
 
-        boolean hasInk = vialOfInk.getItem() == ArchItems.PINEAPPLE_SEEDS;
-        boolean hasGoldenApple = goldenApple.getItem() == Items.GOLDEN_APPLE;
+        boolean hasInk = vialOfInk.getItem() == ArchItems.CONDITIONED_ANCIENT_MOULD;
+        boolean hasGoldenApple = goldenApple.getItem() == ArchItems.ANCIENT_INGOT;
 
         return hasInk && hasGoldenApple &&
                 canInsertAmountIntoOutputSlot(result) &&

@@ -30,10 +30,11 @@ public class ArchItems {
 
     public static final Item FALSE_APPLE = registerItem("false_apple", new Item(new FabricItemSettings().food(ArchFoodComponents.FALSE_APPLE).rarity(Rarity.EPIC).fireproof().maxCount(5)));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
+
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
             new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
-    public static final Item HEAD_CHOPPER = registerItem("head_chopper", new HeadChopperItem(ArchToolMaterial.False_APPLE,10, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+    public static final Item HEAD_CHOPPER = registerItem("head_chopper", new HeadChopperItem(ArchToolMaterial.FALSE_APPLE,10, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 8,-2.7f,  new FabricItemSettings().fireproof()));
 
@@ -41,6 +42,7 @@ public class ArchItems {
     public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(AncientArch.MOD_ID, name), item);
