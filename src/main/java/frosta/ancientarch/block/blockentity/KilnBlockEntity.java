@@ -27,8 +27,8 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private static final int ANCIENT_MOULD_SLOT = 0;              // Vial of Ink
-    private static final int CHARCOAL_SLOT = 1;
-    private static final int ANCIENT_BLOCK_SLOT = 2;
+    private static final int CHARCOAL_SLOT = 2;
+    private static final int ANCIENT_BLOCK_SLOT = 1;
     private static final int OUTPUT_SLOT = 3;             // Ink Dipped Apple
 
     private int progress = 0;
@@ -126,8 +126,8 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private void craftItem() {
         this.removeStack(ANCIENT_MOULD_SLOT, 1);
-        this.removeStack(CHARCOAL_SLOT, 64);
         this.removeStack(ANCIENT_BLOCK_SLOT, 4);
+        this.removeStack(CHARCOAL_SLOT, 1);
 
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
         ItemStack currentOutput = getStack(OUTPUT_SLOT);
@@ -149,13 +149,13 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private boolean hasRecipe() {
         ItemStack AncientMould = getStack(ANCIENT_MOULD_SLOT);
-        ItemStack Charcoal = getStack(CHARCOAL_SLOT);
         ItemStack AncientBlock = getStack(ANCIENT_BLOCK_SLOT);
+        ItemStack Charcoal = getStack(CHARCOAL_SLOT);
         ItemStack result = new ItemStack(ArchItems.EMPTY_CORE);
 
         boolean hasAncientMould = AncientMould.getItem() == ArchItems.CONDITIONED_ANCIENT_MOULD;
-        boolean hasCharcoal = Charcoal.getItem() == Items.CHARCOAL;
         boolean hasAncientBlock = AncientBlock.getItem() == ArchItems.ANCIENT_INGOT;
+        boolean hasCharcoal = Charcoal.getItem() == Items.CHARCOAL;
 
         return hasAncientMould && hasCharcoal && hasAncientBlock &&
                 canInsertAmountIntoOutputSlot(result) &&
