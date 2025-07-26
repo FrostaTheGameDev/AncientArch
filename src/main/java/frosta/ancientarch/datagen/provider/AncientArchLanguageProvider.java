@@ -36,6 +36,7 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("item.ancient-arch.false_apple", "False Apple");
         translationBuilder.add("item.ancient-arch.ancient_greataxe", "Ancient Greataxe");
         translationBuilder.add("item.ancient-arch.ancient_longsword", "Ancient Longsword");
+        translationBuilder.add("item.ancient-arch.holy_still_sword","Still Sword");
         translationBuilder.add("item.ancient-arch.head_chopper", "Head Chopper");
         translationBuilder.add("item.ancient-arch.ancient_helmet", "Ancient Helmet");
         translationBuilder.add("item.ancient-arch.ancient_chestplate", "Ancient Chestplate");

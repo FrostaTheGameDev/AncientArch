@@ -9,13 +9,19 @@
       "item": "minecraft:smooth_stone"
     },
     "%": {
-      "item": "minecraft:barrier"
+      "item": "minecraft:bucket"
+    },
+    "^": {
+      "item": "minecraft:bricks"
+    },
+    "*": {
+      "item": "minecraft:furnace"
     }
   },
   "pattern": [
     "$#$",
-    "# #",
-    "$%$"
+    "#*#",
+    "^%^"
   ],
   "result": {
     "count": 1,
