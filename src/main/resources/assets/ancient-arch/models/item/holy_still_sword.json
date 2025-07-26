@@ -1,0 +1,42 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "ancient-arch:item/holy_still_sword",
+		"layer0": "ancient-arch:item/holy_still_sword"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [51.25, 90, 0],
+			"translation": [0, 11, 4],
+			"scale": [1.87696, 1.91602, 0.99219]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-0.12, 89, -30],
+			"translation": [0, 11, 4.5],
+			"scale": [1.87696, 1.91602, 0.99219]
+		},
+		"firstperson_righthand": {
+			"rotation": [11.21, -78.72, 56.85],
+			"translation": [4, 6.75, -2],
+			"scale": [1.80664, 1.96094, 0.99219]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-132.35, 82.93, 86.12],
+			"translation": [1.75, 6.75, -2.25],
+			"scale": [1.41797, 1.75, 0.99219]
+		},
+		"ground": {
+			"translation": [0, 5.75, 0],
+			"scale": [1.40625, 1.40625, 0.99219]
+		},
+		"gui": {
+			"translation": [0.5, 0.75, 0]
+		},
+		"fixed": {
+			"translation": [0, 1, 0]
+		}
+	}
+}
