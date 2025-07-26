@@ -17,30 +17,30 @@ public class KilnBlockScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
     public final KilnBlockEntity blockEntity;
 
-    public KilnBlockScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(3));
+    public KilnBlockScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
+        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
+                new ArrayPropertyDelegate(4));
     }
 
     public KilnBlockScreenHandler(int syncId, PlayerInventory playerInventory,
-                                       BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
+                                  BlockEntity entity, PropertyDelegate propertyDelegate) {
         super(ArchScreenHandlers.KILN_BLOCK_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 2);
-        this.inventory = ((Inventory) blockEntity);
+        checkSize((Inventory) entity, 4);
+        this.inventory = (Inventory) entity;
+        this.blockEntity = (KilnBlockEntity) entity;
+        this.propertyDelegate = propertyDelegate;
+
         inventory.onOpen(playerInventory.player);
-        this.propertyDelegate = arrayPropertyDelegate;
-        this.blockEntity = ((KilnBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory, 0, 44, 11));
-        this.addSlot(new Slot(inventory, 1, 80, 11));
-        this.addSlot(new Slot(inventory, 2, 116, 11));
-        this.addSlot(new Slot(inventory, 3, 80, 59));
-
+        this.addSlot(new Slot(inventory, 0, 44, 11));  // input 1
+        this.addSlot(new Slot(inventory, 1, 80, 11));  // input 2
+        this.addSlot(new Slot(inventory, 2, 116, 11)); // fuel slot
+        this.addSlot(new Slot(inventory, 3, 80, 59));  // output
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
-        addProperties(arrayPropertyDelegate);
+        addProperties(propertyDelegate);
     }
 
     public boolean isCrafting() {
@@ -48,11 +48,18 @@ public class KilnBlockScreenHandler extends ScreenHandler {
     }
 
     public int getScaledProgress() {
-        int progress = this.propertyDelegate.get(0);
-        int maxProgress = this.propertyDelegate.get(1);
+        int progress = propertyDelegate.get(0);
+        int maxProgress = propertyDelegate.get(1);
         int progressArrowSize = 26;
-
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getFuelTime() {
+        return propertyDelegate.get(2);
+    }
+
+    public int getFuelTimeMax() {
+        return propertyDelegate.get(3);
     }
 
     @Override

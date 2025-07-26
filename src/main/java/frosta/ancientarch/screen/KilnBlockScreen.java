@@ -8,38 +8,50 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-    public class KilnBlockScreen extends HandledScreen<KilnBlockScreenHandler> {
-        private static final Identifier TEXTURE = new Identifier(AncientArch.MOD_ID, "textures/gui/kiln_gui.png");
+public class KilnBlockScreen extends HandledScreen<KilnBlockScreenHandler> {
+    private static final Identifier TEXTURE = new Identifier(AncientArch.MOD_ID, "textures/gui/kiln_gui.png");
 
-        public KilnBlockScreen(KilnBlockScreenHandler handler, PlayerInventory inventory, Text title) {
-            super(handler, inventory, title);
+    public KilnBlockScreen(KilnBlockScreenHandler handler, PlayerInventory inventory, Text title) {
+        super(handler, inventory, title);
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        titleY = 1000;
+        playerInventoryTitleY = 1000;
+    }
+
+    @Override
+    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+        RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
+        RenderSystem.setShaderTexture(0, TEXTURE);
+        int x = (width - backgroundWidth) / 2;
+        int y = (height - backgroundHeight) / 2;
+
+        context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+
+        renderProgressArrow(context, x, y);
+        renderFuelFlame(context, x, y);
+    }
+
+    private void renderProgressArrow(DrawContext context, int x, int y) {
+        if (handler.isCrafting()) {
+            context.drawTexture(TEXTURE, x + 85, y + 30, 176, 0, 8, handler.getScaledProgress());
         }
+    }
 
-        @Override
-        protected void init() {
-            super.init();
-            titleY = 1000;
-            playerInventoryTitleY = 1000;
+    private void renderFuelFlame(DrawContext context, int x, int y) {
+        int fuelTime = handler.getFuelTime();
+        int fuelTimeMax = handler.getFuelTimeMax();
+        if (fuelTimeMax > 0) {
+            int flameHeight = (int)(14f * ((float) fuelTime / fuelTimeMax));
+            // x+56, y+36: adjust to your GUI flame position
+            // 176, 14 - flameHeight: texture coords of flame in kiln_gui.png
+            context.drawTexture(TEXTURE, x + 96, y + 36 + 14 - flameHeight, 116, 14 - flameHeight, 14, flameHeight);
         }
-
-        @Override
-        protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-            RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-            RenderSystem.setShaderTexture(0, TEXTURE);
-            int x = (width - backgroundWidth) / 2;
-            int y = (height - backgroundHeight) / 2;
-
-            context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-
-            renderProgressArrow(context, x, y);
-        }
-
-        private void renderProgressArrow(DrawContext context, int x, int y) {
-            if(handler.isCrafting()) {
-                context.drawTexture(TEXTURE, x + 85, y + 30, 176, 0, 8, handler.getScaledProgress());
-            }
-        }
+    }
 
         @Override
         public void render(DrawContext context, int mouseX, int mouseY, float delta) {

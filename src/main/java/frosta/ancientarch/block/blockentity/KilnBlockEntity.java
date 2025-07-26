@@ -2,6 +2,7 @@ package frosta.ancientarch.block.blockentity;
 
 import frosta.ancientarch.recipe.KilnRecipe;
 import frosta.ancientarch.screen.KilnBlockScreenHandler;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -13,6 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -28,38 +30,42 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private static final int ANCIENT_MOULD_SLOT = 0;
-    private static final int INGOT_SLOT = 1;              // Vial of Ink
+    private static final int INGOT_SLOT = 1;
     private static final int FUEL_SLOT = 2;
-    private static final int OUTPUT_SLOT = 3;             // Ink Dipped Apple
+    private static final int OUTPUT_SLOT = 3;
 
     private int progress = 0;
     private int maxProgress = 172;
+    private int fuelTime = 0;
+    private int maxFuelTime = 0;
 
     private final PropertyDelegate propertyDelegate;
 
     public KilnBlockEntity(BlockPos pos, BlockState state) {
         super(ArchBlockEntitys.KILN_BLOCK_ENTITY, pos, state);
+
         this.propertyDelegate = new PropertyDelegate() {
-            @Override
             public int get(int index) {
                 return switch (index) {
                     case 0 -> KilnBlockEntity.this.progress;
                     case 1 -> KilnBlockEntity.this.maxProgress;
+                    case 2 -> KilnBlockEntity.this.fuelTime;
+                    case 3 -> KilnBlockEntity.this.maxFuelTime;
                     default -> 0;
                 };
             }
 
-            @Override
             public void set(int index, int value) {
                 switch (index) {
                     case 0 -> KilnBlockEntity.this.progress = value;
                     case 1 -> KilnBlockEntity.this.maxProgress = value;
+                    case 2 -> KilnBlockEntity.this.fuelTime = value;
+                    case 3 -> KilnBlockEntity.this.maxFuelTime = value;
                 }
             }
 
-            @Override
             public int size() {
-                return 2;
+                return 4;
             }
         };
     }
@@ -84,6 +90,8 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("kiln.progress", progress);
+        nbt.putInt("kiln.fuelTime", fuelTime);
+        nbt.putInt("kiln.maxFuelTime", maxFuelTime);
     }
 
     @Override
@@ -91,25 +99,33 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
         progress = nbt.getInt("kiln.progress");
+        fuelTime = nbt.getInt("kiln.fuelTime");
+        maxFuelTime = nbt.getInt("kiln.maxFuelTime");
     }
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new KilnBlockScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
+        return new KilnBlockScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, KilnBlockEntity entity) {
-        if (world.isClient()) {
-            return;
+        if (world.isClient()) return;
+
+        boolean hasRecipe = entity.hasRecipe();
+
+        if (entity.isBurning()) {
+            entity.fuelTime--;
         }
 
-        if (entity.isOutputSlotEmptyOrReceivable()) {
-            if (entity.hasRecipe()) {
-                entity.increaseCraftProgress();
-                markDirty(world, pos, state);
+        if (hasRecipe) {
+            if (!entity.isBurning() && entity.hasFuel()) {
+                entity.consumeFuel();
+            }
 
-                if (entity.hasCraftingFinished()) {
+            if (entity.isBurning()) {
+                entity.progress++;
+                if (entity.progress >= entity.maxProgress) {
                     entity.craftItem();
                     entity.resetProgress();
                 }
@@ -118,50 +134,73 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
             }
         } else {
             entity.resetProgress();
-            markDirty(world, pos, state);
         }
+
+        markDirty(world, pos, state);
     }
 
     private void resetProgress() {
         this.progress = 0;
     }
 
+    private void consumeFuel() {
+        ItemStack fuelStack = this.getStack(FUEL_SLOT);
+        Integer fuelTime = FuelRegistry.INSTANCE.get(fuelStack.getItem());
+
+        if (fuelTime != null) {
+            this.maxFuelTime = this.fuelTime = fuelTime;
+            fuelStack.decrement(1);
+        }
+    }
+
+    private boolean isBurning() {
+        return fuelTime > 0;
+    }
+
+    private boolean hasFuel() {
+        ItemStack fuelStack = getStack(FUEL_SLOT);
+        if (fuelStack.isEmpty()) return false;
+
+        Integer fuelTime = FuelRegistry.INSTANCE.get(fuelStack.getItem());
+        return fuelTime != null && fuelTime > 0;
+    }
+
     private void craftItem() {
-        Optional<KilnRecipe> recipe = getCurrentRecipe();
-        if (recipe.isEmpty()) return;
+        Optional<KilnRecipe> match = getCurrentRecipe();
+        if (match.isEmpty()) return;
 
-        this.removeStack(ANCIENT_MOULD_SLOT, 1);
-        this.removeStack(INGOT_SLOT, 1);
-        this.removeStack(FUEL_SLOT, 1);
+        KilnRecipe recipe = match.get();
+        DefaultedList<Ingredient> ingredients = recipe.getIngredients();
 
-        ItemStack result = recipe.get().getResult(null).copy();
+        getStack(ANCIENT_MOULD_SLOT).decrement(ingredients.get(0).getMatchingStacks()[0].getCount());
+        getStack(INGOT_SLOT).decrement(ingredients.get(1).getMatchingStacks()[0].getCount());
+
+        // Fuel already decremented when consumed
+
+        ItemStack result = recipe.getResult(null);
         ItemStack output = this.getStack(OUTPUT_SLOT);
 
         if (output.isEmpty()) {
-            this.setStack(OUTPUT_SLOT, result);
+            this.setStack(OUTPUT_SLOT, result.copy());
         } else {
             output.increment(result.getCount());
         }
     }
 
-    private boolean hasCraftingFinished() {
-        return progress >= maxProgress;
-    }
-
-    private void increaseCraftProgress() {
-        progress++;
-    }
-
     private boolean hasRecipe() {
-        Optional<KilnRecipe> recipe = getCurrentRecipe();
-        return recipe.isPresent()
-                && canInsertAmountIntoOutputSlot(recipe.get().getResult(null))
-                && canInsertItemIntoOutputSlot(recipe.get().getResult(null).getItem());
+        Optional<KilnRecipe> match = getCurrentRecipe();
+        if (match.isEmpty()) return false;
+
+        KilnRecipe recipe = match.get();
+        ItemStack result = recipe.getResult(null);
+
+        return canInsertItemIntoOutputSlot(result.getItem()) &&
+                canInsertAmountIntoOutputSlot(result);
     }
 
     private Optional<KilnRecipe> getCurrentRecipe() {
         SimpleInventory inv = new SimpleInventory(this.size());
-        for(int i = 0; i < this.size(); i++) {
+        for (int i = 0; i < this.size(); i++) {
             inv.setStack(i, this.getStack(i));
         }
 
@@ -169,14 +208,17 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
+        ItemStack output = this.getStack(OUTPUT_SLOT);
+        return output.isEmpty() || output.getItem() == item;
     }
 
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
+        ItemStack output = this.getStack(OUTPUT_SLOT);
+        return output.getCount() + result.getCount() <= output.getMaxCount();
     }
 
     private boolean isOutputSlotEmptyOrReceivable() {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+        ItemStack output = this.getStack(OUTPUT_SLOT);
+        return output.isEmpty() || output.getCount() < output.getMaxCount();
     }
 }
