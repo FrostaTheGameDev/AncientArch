@@ -158,7 +158,12 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
         if (fuelTime != null) {
             this.maxFuelTime = this.fuelTime = fuelTime;
-            fuelStack.decrement(1);
+
+            if (fuelStack.isOf(net.minecraft.item.Items.LAVA_BUCKET)) {
+                this.setStack(FUEL_SLOT, new ItemStack(net.minecraft.item.Items.BUCKET));
+            } else {
+                fuelStack.decrement(1);
+            }
         }
     }
 
