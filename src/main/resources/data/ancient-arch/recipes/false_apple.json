@@ -7,12 +7,15 @@
     },
     "$": {
       "item": "minecraft:nether_star"
+    },
+    "%": {
+      "item": "minecraft:crying_obsidian"
     }
   },
   "pattern": [
-    " # ",
+    "%#%",
     "#$#",
-    " # "
+    "%#%"
   ],
   "result": {
     "count": 4,
