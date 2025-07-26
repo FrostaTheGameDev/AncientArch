@@ -1,12 +1,10 @@
 package frosta.ancientarch.block.blockentity;
 
 import frosta.ancientarch.item.ArchItems;
-import frosta.ancientarch.recipe.ArchRecipes;
-import frosta.ancientarch.recipe.KilnRecipe;
 import frosta.ancientarch.screen.KilnBlockScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -24,7 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class KilnBlockEntity extends AbstractFurnaceBlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private static final int ANCIENT_MOULD_SLOT = 0;
@@ -38,7 +36,7 @@ public class KilnBlockEntity extends AbstractFurnaceBlockEntity implements Exten
     private final PropertyDelegate propertyDelegate;
 
     public KilnBlockEntity(BlockPos pos, BlockState state) {
-        super(ArchBlockEntitys.KILN_BLOCK_ENTITY, pos, state, );
+        super(ArchBlockEntitys.KILN_BLOCK_ENTITY, pos, state);
 
         this.propertyDelegate = new PropertyDelegate() {
             @Override
@@ -75,10 +73,6 @@ public class KilnBlockEntity extends AbstractFurnaceBlockEntity implements Exten
         return Text.literal("Kiln");
     }
 
-    @Override
-    protected Text getContainerName() {
-        return null;
-    }
 
     @Nullable
     @Override
@@ -86,10 +80,6 @@ public class KilnBlockEntity extends AbstractFurnaceBlockEntity implements Exten
         return new KilnBlockScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
-    @Override
-    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return null;
-    }
 
     @Override
     public DefaultedList<ItemStack> getItems() {
