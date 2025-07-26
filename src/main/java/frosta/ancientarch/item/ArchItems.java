@@ -13,7 +13,7 @@ public class ArchItems {
     public static final Item SILICA_GEL_PACKET = registerItem("silica_gel_packet", new Item(new FabricItemSettings().food(ArchFoodComponents.SILICA_GEL_PACKET)));
     public static final Item MOLDABLE_PORCELAIN = registerItem("moldable_porcelain", new Item(new FabricItemSettings()));
     public static final Item CLAY_SLIP = registerItem("clay_slip", new Item(new FabricItemSettings()));
-    public static final Item SILICA = registerItem("silica", new Item(new FabricItemSettings()));
+    public static final Item SILICA_CRYSTALS = registerItem("silica_crystals", new Item(new FabricItemSettings()));
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
@@ -28,7 +28,7 @@ public class ArchItems {
     public static final Item EMPTY_CORE = registerItem("empty_core", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item HOLY_CORE = registerItem("holy_core", new HolyCoreItem(new FabricItemSettings().maxCount(1).rarity(Rarity.EPIC).fireproof()));
 
-    public static final Item FALSE_APPLE = registerItem("false_apple", new Item(new FabricItemSettings().food(ArchFoodComponents.FALSE_APPLE).rarity(Rarity.EPIC).fireproof().maxCount(5)));
+    public static final Item FALSE_APPLE = registerItem("false_apple", new Item(new FabricItemSettings().food(ArchFoodComponents.FALSE_APPLE).rarity(Rarity.EPIC).fireproof().maxCount(4)));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
 
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",

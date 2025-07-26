@@ -17,7 +17,7 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("item.ancient-arch.moldable_porcelain", "Moldable Porcelain");
         translationBuilder.add("item.ancient-arch.porcelain_totem","Porcelain Totem");
         translationBuilder.add("item.ancient-arch.clay_slip", "Clay Slip");
-        translationBuilder.add("item.ancient-arch.silica", "Silica");
+        translationBuilder.add("item.ancient-arch.silica_crystals", "Silica Crystals");
         translationBuilder.add("item.ancient-arch.remnant_shard", "Remnant Shard");
         translationBuilder.add("item.ancient-arch.molten_remnant", "Molten Remnant");
         translationBuilder.add("item.ancient-arch.unconditioned_ancient_mould", "Unconditioned Ancient Mould");

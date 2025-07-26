@@ -20,7 +20,7 @@ public class ArchItemGroups {
                         entries.add(ArchBlocks.ANCIENT_BLOCK);
                         entries.add(ArchItems.PINEAPPLE);
                         entries.add(ArchItems.PINEAPPLE_SEEDS);
-                        entries.add(ArchItems.SILICA);
+                        entries.add(ArchItems.SILICA_CRYSTALS);
                         entries.add(ArchItems.SILICA_GEL_PACKET);
                         entries.add(ArchItems.CLAY_SLIP);
                         entries.add(ArchItems.MOLDABLE_PORCELAIN);

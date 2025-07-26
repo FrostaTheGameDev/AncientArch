@@ -4,6 +4,7 @@ import frosta.ancientarch.block.ArchBlocks;
 import frosta.ancientarch.block.blockentity.ArchBlockEntitys;
 import frosta.ancientarch.item.ArchItemGroups;
 import frosta.ancientarch.item.ArchItems;
+import frosta.ancientarch.recipe.ArchRecipes;
 import frosta.ancientarch.screen.ArchScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
@@ -28,5 +29,6 @@ public class AncientArch implements ModInitializer {
 		ArchItemGroups.registerItemGroups();
 		ArchItems.registerModItems();
 		ArchBlocks.registerModBlocks();
+		ArchRecipes.registerRecipes();
 	}
 }
