@@ -4,8 +4,8 @@
 	"parent": "minecraft:item/handheld",
 	"texture_size": [32, 32],
 	"textures": {
-		"particle": "ancient-arch:item/holy_still_sword",
-		"layer0": "ancient-arch:item/holy_still_sword"
+		"particle": "ancient-arch:item/holy_still_sword_3d",
+		"layer0": "ancient-arch:item/holy_still_sword_3d"
 	},
 	"display": {
 		"thirdperson_righthand": {
