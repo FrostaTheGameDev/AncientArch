@@ -1,0 +1,12 @@
+{
+  "type": "ancient-arch:kiln",
+  "ingredients": [
+    { "item": "ancient-arch:conditioned_ancient_mould"},
+    { "item": "ancient-arch:ancient_block"},
+    { "item": "minecraft:charcoal"}
+  ],
+  "result": {
+    "item": "ancient-arch:empty_core",
+    "count": 1
+  }
+}

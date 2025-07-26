@@ -1,42 +1,41 @@
 package frosta.ancientarch.recipe;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class KilnRecipe implements Recipe<SimpleInventory> {
+
     private final Identifier id;
     private final ItemStack output;
-    private final DefaultedList<Ingredient> recipeItems;
+    private final List<Ingredient> recipeItems;
 
-    public KilnRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    public KilnRecipe(Identifier id, List<Ingredient> ingredients, ItemStack output) {
         this.id = id;
         this.output = output;
-        this.recipeItems = recipeItems;
+        this.recipeItems = ingredients;
     }
 
     @Override
     public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
-            return false;
+        if (world.isClient) return false;
+        for (int i = 0; i < recipeItems.size(); i++) {
+            if (!recipeItems.get(i).test(inventory.getStack(i))) {
+                return false;
+            }
         }
-
-        return recipeItems.get(0).test(inventory.getStack(1));
+        return true;
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-        return output;
+    public ItemStack craft(SimpleInventory inventory, net.minecraft.registry.DynamicRegistryManager registryManager) {
+        return output.copy();
     }
-
 
     @Override
     public boolean fits(int width, int height) {
@@ -44,10 +43,9 @@ public class KilnRecipe implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
+    public ItemStack getOutput(net.minecraft.registry.DynamicRegistryManager registryManager) {
         return output.copy();
     }
-
 
     @Override
     public Identifier getId() {
@@ -64,8 +62,20 @@ public class KilnRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.ofSize(recipeItems.size(), Ingredient.EMPTY);
+        for (int i = 0; i < recipeItems.size(); i++) {
+            list.set(i, recipeItems.get(i));
+        }
+        return list;
+    }
+
+    public ItemStack getResult(net.minecraft.registry.DynamicRegistryManager registryManager) {
+        return output.copy();
+    }
+
     public static class Type implements RecipeType<KilnRecipe> {
-        private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "kiln";
     }
@@ -73,41 +83,39 @@ public class KilnRecipe implements Recipe<SimpleInventory> {
     public static class Serializer implements RecipeSerializer<KilnRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "kiln";
-        // this is the name given in the json file
 
         @Override
-        public KilnRecipe read(Identifier id, JsonObject json) {
-            ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
-
-            JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+        public KilnRecipe read(Identifier id, com.google.gson.JsonObject json) {
+            var ingredientsJson = net.minecraft.util.JsonHelper.getArray(json, "ingredients");
+            List<Ingredient> ingredients = new java.util.ArrayList<>();
+            for (var element : ingredientsJson) {
+                ingredients.add(Ingredient.fromJson(element));
             }
 
-            return new KilnRecipe(id, output, inputs);
+            var resultJson = net.minecraft.util.JsonHelper.getObject(json, "result");
+            ItemStack output = ShapedRecipe.outputFromJson(resultJson);
+
+            return new KilnRecipe(id, ingredients, output);
         }
 
         @Override
-        public KilnRecipe read(Identifier id, PacketByteBuf buf) {
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromPacket(buf));
+        public KilnRecipe read(Identifier id, net.minecraft.network.PacketByteBuf buf) {
+            int ingredientCount = buf.readInt();
+            List<Ingredient> ingredients = new java.util.ArrayList<>(ingredientCount);
+            for (int i = 0; i < ingredientCount; i++) {
+                ingredients.add(Ingredient.fromPacket(buf));
             }
-
             ItemStack output = buf.readItemStack();
-            return new KilnRecipe(id, output, inputs);
+            return new KilnRecipe(id, ingredients, output);
         }
 
         @Override
-        public void write(PacketByteBuf buf, KilnRecipe recipe) {
-            buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.write(buf);
+        public void write(net.minecraft.network.PacketByteBuf buf, KilnRecipe recipe) {
+            buf.writeInt(recipe.recipeItems.size());
+            for (Ingredient ingredient : recipe.recipeItems) {
+                ingredient.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput());
+            buf.writeItemStack(recipe.output);
         }
     }
 }
