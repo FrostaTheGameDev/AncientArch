@@ -36,7 +36,7 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     private static final int OUTPUT_SLOT = 3;
 
     private int progress = 0;
-    private int maxProgress = 172;
+    private int maxProgress = 2500;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 

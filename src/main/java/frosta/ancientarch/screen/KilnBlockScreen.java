@@ -47,7 +47,7 @@ public class KilnBlockScreen extends HandledScreen<KilnBlockScreenHandler> {
         int fuelTimeMax = handler.getFuelTimeMax();
         if (fuelTimeMax > 0) {
             int flameHeight = (int)(14f * ((float) fuelTime / fuelTimeMax));
-            context.drawTexture(TEXTURE, x + 96, y + 36 + 14 - flameHeight, 116, 14 - flameHeight, 14, flameHeight);
+            context.drawTexture(TEXTURE, x + 117, y + 43 + 1 - flameHeight, 176, 41 - flameHeight, 14, flameHeight);
         }
     }
 
