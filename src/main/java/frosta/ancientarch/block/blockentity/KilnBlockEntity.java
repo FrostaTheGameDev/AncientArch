@@ -4,6 +4,7 @@ import frosta.ancientarch.recipe.KilnRecipe;
 import frosta.ancientarch.screen.KilnBlockScreenHandler;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -112,18 +113,22 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
     public static void tick(World world, BlockPos pos, BlockState state, KilnBlockEntity entity) {
         if (world.isClient()) return;
 
+        boolean wasLit = state.get(AbstractFurnaceBlock.LIT);
+        boolean isLit = entity.isBurning();
+
         boolean hasRecipe = entity.hasRecipe();
 
-        if (entity.isBurning()) {
+        if (isLit) {
             entity.fuelTime--;
         }
 
         if (hasRecipe) {
-            if (!entity.isBurning() && entity.hasFuel()) {
+            if (!isLit && entity.hasFuel()) {
                 entity.consumeFuel();
+                isLit = true;
             }
 
-            if (entity.isBurning()) {
+            if (isLit) {
                 entity.progress++;
                 if (entity.progress >= entity.maxProgress) {
                     entity.craftItem();
@@ -134,6 +139,10 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
             }
         } else {
             entity.resetProgress();
+        }
+
+        if (wasLit != isLit) {
+            world.setBlockState(pos, state.with(AbstractFurnaceBlock.LIT, isLit), 3);
         }
 
         markDirty(world, pos, state);
@@ -174,8 +183,6 @@ public class KilnBlockEntity extends BlockEntity implements ExtendedScreenHandle
 
         getStack(ANCIENT_MOULD_SLOT).decrement(ingredients.get(0).getMatchingStacks()[0].getCount());
         getStack(INGOT_SLOT).decrement(ingredients.get(1).getMatchingStacks()[0].getCount());
-
-        // Fuel already decremented when consumed
 
         ItemStack result = recipe.getResult(null);
         ItemStack output = this.getStack(OUTPUT_SLOT);

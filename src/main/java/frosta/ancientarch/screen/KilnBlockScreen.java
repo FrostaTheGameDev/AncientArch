@@ -47,8 +47,6 @@ public class KilnBlockScreen extends HandledScreen<KilnBlockScreenHandler> {
         int fuelTimeMax = handler.getFuelTimeMax();
         if (fuelTimeMax > 0) {
             int flameHeight = (int)(14f * ((float) fuelTime / fuelTimeMax));
-            // x+56, y+36: adjust to your GUI flame position
-            // 176, 14 - flameHeight: texture coords of flame in kiln_gui.png
             context.drawTexture(TEXTURE, x + 96, y + 36 + 14 - flameHeight, 116, 14 - flameHeight, 14, flameHeight);
         }
     }

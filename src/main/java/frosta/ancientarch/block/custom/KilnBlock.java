@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class KilnBlock extends AbstractFurnaceBlock implements BlockEntityProvider {
     public KilnBlock(Settings settings) {
-        super(settings);
+        super(settings.luminance(state -> state.get(LIT) ? 13 : 0));
     }
 
     @Nullable
