@@ -39,16 +39,16 @@ public class StillSwordItem extends SwordItem {
                     new EntityAttributeModifier(REACH_MODIFIER_ID, "Weapon modifier", 0.75, EntityAttributeModifier.Operation.ADDITION));
 
             modifiers.put(EntityAttributes.GENERIC_MOVEMENT_SPEED,
-                    new EntityAttributeModifier(SLOWNESS_MODIFIER_ID, "Still Sword Slowness", -0.35, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
+                    new EntityAttributeModifier(SLOWNESS_MODIFIER_ID, "Still Sword Slowness", -0.25, EntityAttributeModifier.Operation.MULTIPLY_TOTAL));
         }
         return modifiers;
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        // 50% chance to apply "Stale"
+        // 50% chance to apply "Stillness"
         if (!target.getWorld().isClient && RANDOM.nextFloat() < 0.5f) {
-            target.addStatusEffect(new StatusEffectInstance(ArchEffects.STALE, 20 * 10, 0));
+            target.addStatusEffect(new StatusEffectInstance(ArchEffects.STILLNESS, 20 * 10, 0));
         }
         return super.postHit(stack, target, attacker);
     }

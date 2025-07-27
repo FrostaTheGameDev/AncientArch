@@ -48,6 +48,7 @@ public class AncientArchLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add( "block.ancient-arch.wet_porcelain_block", "Wet Porcelain Block");
         translationBuilder.add( "block.ancient-arch.dried_porcelain_block", "Dried Porcelain Block");
         translationBuilder.add( "block.ancient-arch.kiln", "Kiln");
+        translationBuilder.add("effect.ancient-arch.stillness","Stillness");
         translationBuilder.add("itemgroup.ancient_arch", "Ancient Arch");
     }
 }

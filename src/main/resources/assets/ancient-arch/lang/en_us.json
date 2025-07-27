@@ -34,5 +34,6 @@
   "item.ancient-arch.unconditioned_ancient_mould": "Unconditioned Ancient Mould",
   "item.ancient-arch.unrefined_ancient_amalgam": "Unrefined Ancient Amalgam",
   "item.ancient-arch.unstable_core": "Unstable Core",
+  "effect.ancient-arch.stillness": "Stillness",
   "itemgroup.ancient_arch": "Ancient Arch"
 }

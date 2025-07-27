@@ -15,7 +15,7 @@
       "item": "minecraft:bricks"
     },
     "*": {
-      "item": "minecraft:furnace"
+      "item": "minecraft:barrier"
     }
   },
   "pattern": [

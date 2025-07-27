@@ -7,11 +7,11 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 import java.util.UUID;
 
-public class Stale extends StatusEffect {
+public class Stillness extends StatusEffect {
 
     private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("a709e8c6-d7b2-4d7f-bca4-7c2d3b2e7c1e");
 
-    public Stale() {
+    public Stillness() {
         super(StatusEffectCategory.HARMFUL, 0xAAAAAA); // grey-ish color
 
         this.addAttributeModifier(
