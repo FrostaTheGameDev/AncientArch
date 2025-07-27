@@ -35,6 +35,10 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.HOLY_STILL_SWORD, new ModelIdentifier(AncientArch.MOD_ID, "holy_still_sword_inventory", "inventory"), (mode) -> switch(mode) {
+            case GUI, GROUND -> true;
+            default -> false;
+        });
 
         BlockRenderLayerMap.INSTANCE.putBlock(ArchBlocks.PINEAPPLE_CROP, RenderLayer.getCutout());
     }
