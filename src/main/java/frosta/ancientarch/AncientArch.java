@@ -2,6 +2,7 @@ package frosta.ancientarch;
 
 import frosta.ancientarch.block.ArchBlocks;
 import frosta.ancientarch.block.blockentity.ArchBlockEntitys;
+import frosta.ancientarch.effect.ArchEffects;
 import frosta.ancientarch.item.ArchItemGroups;
 import frosta.ancientarch.item.ArchItems;
 import frosta.ancientarch.recipe.ArchRecipes;
@@ -26,5 +27,7 @@ public class AncientArch implements ModInitializer {
 		ArchBlocks.registerModBlocks();
 
 		ArchRecipes.registerRecipes();
+
+		ArchEffects.registerModEffects();
 	}
 }

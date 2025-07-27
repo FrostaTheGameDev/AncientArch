@@ -42,7 +42,6 @@ public class ArchItemGroups {
                         entries.add(ArchItems.GAUNTLET_CORE);
                         entries.add(ArchItems.UNSTABLE_CORE);
                         entries.add(ArchItems.HOLY_CORE);
-                        entries.add(ArchItems.HOLY_STILL_SWORD);
                         entries.add(ArchItems.EMPTY_CORE);
                     }).build());
 
