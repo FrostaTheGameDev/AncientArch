@@ -34,6 +34,7 @@ public class ArchItems {
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
             new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
+    public static final Item THE_WRAITH = registerItem("the_wraith", new TheWraithItem(ArchToolMaterial.WRAITH,998,-3.9f,new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item HOLY_STILL_SWORD = registerItem("holy_still_sword", new StillSwordItem(ArchToolMaterial.ANCIENT_INGOT,8,-2.7f,new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item HEAD_CHOPPER = registerItem("head_chopper", new HeadChopperItem(ArchToolMaterial.FALSE_APPLE,10, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));

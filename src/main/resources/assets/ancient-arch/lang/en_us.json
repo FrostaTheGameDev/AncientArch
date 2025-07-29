@@ -13,6 +13,7 @@
   "item.ancient-arch.ancient_leggings": "Ancient Leggings",
   "item.ancient-arch.ancient_longsword": "Ancient Longsword",
   "item.ancient-arch.holy_still_sword": "Still Sword",
+  "item.ancient-arch.the_wraith": "The Wraith",
   "item.ancient-arch.clay_slip": "Clay Slip",
   "item.ancient-arch.conditioned_ancient_mould": "Conditioned Ancient Mould",
   "item.ancient-arch.conditioned_armor_mould": "Conditioned Armor Mould",
@@ -34,5 +35,6 @@
   "item.ancient-arch.unconditioned_ancient_mould": "Unconditioned Ancient Mould",
   "item.ancient-arch.unrefined_ancient_amalgam": "Unrefined Ancient Amalgam",
   "item.ancient-arch.unstable_core": "Unstable Core",
+  "effect.ancient-arch.stillness": "Stillness",
   "itemgroup.ancient_arch": "Ancient Arch"
 }
