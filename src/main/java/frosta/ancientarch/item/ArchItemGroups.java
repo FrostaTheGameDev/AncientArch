@@ -34,6 +34,7 @@ public class ArchItemGroups {
                         entries.add(ArchItems.ANCIENT_GREATAXE);
                         entries.add(ArchItems.FALSE_APPLE);
                         entries.add(ArchItems.HEAD_CHOPPER);
+                        entries.add(ArchItems.PURIFIED_WINTER);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
                         entries.add(ArchItems.ANCIENT_HELMET);
                         entries.add(ArchItems.ANCIENT_CHESTPLATE);
