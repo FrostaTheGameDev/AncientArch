@@ -1,0 +1,11 @@
+{
+  "type": "ancient-arch:kiln",
+  "ingredients": [
+    { "item": "ancient-arch:holy_core"},
+    { "item": "ancient-arch:head_chopper"}
+  ],
+  "result": {
+    "item": "ancient-arch:purified_winter",
+    "count": 1
+  }
+}

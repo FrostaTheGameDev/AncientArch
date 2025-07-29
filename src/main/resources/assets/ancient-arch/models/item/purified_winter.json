@@ -1,0 +1,42 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"texture_size": [32, 32],
+	"textures": {
+		"particle": "ancient-arch:item/purified_winter_3d",
+		"layer0": "ancient-arch:item/purified_winter_3d"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-163.43, -88.25, -125.53],
+			"translation": [0, 6.5, 3],
+			"scale": [1.96, 1.96, 0.99219]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [19, 89.26, -59.16],
+			"translation": [0, 10, 3],
+			"scale": [1.96, 1.96, 0.99219]
+		},
+		"firstperson_righthand": {
+			"rotation": [44.7, -84.55, 100.22],
+			"translation": [1, 2.75, -1],
+			"scale": [1.75391, 1.75391, 0.99219]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-101.66, 81.88, 53.81],
+			"translation": [1.75, 1.75, -2.5],
+			"scale": [1.75391, 1.75391, 0.99219]
+		},
+		"ground": {
+			"translation": [0, 5.75, 0],
+			"scale": [1.17969, 1.17969, 1.17969]
+		},
+		"gui": {
+			"translation": [0.5, 0.5, 0]
+		},
+		"fixed": {
+			"translation": [2, 1.5, 0]
+		}
+	}
+}

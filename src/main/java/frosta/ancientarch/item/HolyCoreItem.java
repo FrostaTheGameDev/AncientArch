@@ -49,7 +49,7 @@ public class HolyCoreItem extends Item {
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         if (stack.hasNbt() && stack.getNbt().contains("BoundName")) {
             String name = stack.getNbt().getString("BoundName");
-            tooltip.add(Text.literal("Bound to: ").formatted(Formatting.GREEN).append(Text.literal(name).formatted(Formatting.GREEN)));
+            tooltip.add(Text.literal("Bound to: ").formatted(Formatting.DARK_AQUA).append(Text.literal(name).formatted(Formatting.DARK_AQUA)));
         } else {
             tooltip.add(Text.literal("Unbound").formatted(new Formatting[]{Formatting.GRAY, Formatting.ITALIC}));
         }

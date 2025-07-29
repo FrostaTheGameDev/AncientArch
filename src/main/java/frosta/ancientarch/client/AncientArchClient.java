@@ -39,6 +39,10 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.PURIFIED_WINTER, new ModelIdentifier(AncientArch.MOD_ID, "purified_winter_inventory", "inventory"), (mode) -> switch(mode) {
+            case GUI, GROUND -> true;
+            default -> false;
+        });
 
         BlockRenderLayerMap.INSTANCE.putBlock(ArchBlocks.PINEAPPLE_CROP, RenderLayer.getCutout());
     }

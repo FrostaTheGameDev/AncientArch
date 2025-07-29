@@ -10,9 +10,9 @@ public enum ArchToolMaterial implements ToolMaterial {
     ANCIENT_INGOT(4,2000,35,0.5f,26,
             () ->Ingredient.ofItems(Items.NETHERITE_SCRAP)),
     FALSE_APPLE(4,2000,45,0.5f,26,
-            () ->Ingredient.ofItems(ArchItems.FALSE_APPLE)),
-    WRAITH(4,1,45,0,0,
-            () ->Ingredient.ofItems(ArchItems.UNSTABLE_CORE));
+            () ->Ingredient.ofItems(Items.AIR)),
+    HOLY(4,5000,45,0.5f,0,
+            () ->Ingredient.ofItems(ArchItems.HOLY_CORE));
 
 
     private final int miningLevel;
