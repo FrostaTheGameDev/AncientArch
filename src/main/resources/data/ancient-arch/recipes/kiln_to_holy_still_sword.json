@@ -1,0 +1,11 @@
+{
+  "type": "ancient-arch:kiln",
+  "ingredients": [
+    { "item": "ancient-arch:conditioned_weapon_mould"},
+    { "item": "ancient-arch:autumn_soul"}
+  ],
+  "result": {
+    "item": "ancient-arch:holy_still_sword",
+    "count": 1
+  }
+}

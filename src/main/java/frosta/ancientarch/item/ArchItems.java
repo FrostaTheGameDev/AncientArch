@@ -38,7 +38,7 @@ public class ArchItems {
             new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
     public static final Item HOLY_HAND_GRENADE = registerItem("holy_hand_grenade", new HolyHandGrenadeItem(new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
-    public static final Item PURIFIED_WINTER = registerItem("purified_winter", new PurifiedWinterItem(ArchToolMaterial.HOLY,11,-3f,new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
+    public static final Item PURIFIED_WINTER = registerItem("purified_winter", new PurifiedWinterItem(ArchToolMaterial.HOLY,10,-3f,new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
     public static final Item HOLY_STILL_SWORD = registerItem("holy_still_sword", new StillSwordItem(ArchToolMaterial.ANCIENT_INGOT,8,-2.7f,new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
     public static final Item HEAD_CHOPPER = registerItem("head_chopper", new HeadChopperItem(ArchToolMaterial.FALSE_APPLE,10, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));
