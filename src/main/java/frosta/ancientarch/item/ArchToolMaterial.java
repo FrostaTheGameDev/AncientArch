@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public enum ArchToolMaterial implements ToolMaterial {
     ANCIENT_INGOT(4,2000,35,0.5f,26,
             () ->Ingredient.ofItems(Items.NETHERITE_SCRAP)),
-    FALSE_APPLE(4,2000,45,0.5f,26,
+    FALSE(4,2000,45,0.5f,26,
             () ->Ingredient.ofItems(Items.AIR)),
     HOLY(4,5000,45,1f,30,
             () ->Ingredient.ofItems(ArchItems.HOLY_CORE));

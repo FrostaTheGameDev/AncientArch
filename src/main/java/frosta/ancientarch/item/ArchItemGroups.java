@@ -33,7 +33,7 @@ public class ArchItemGroups {
                         entries.add(ArchItems.ANCIENT_LONGSWORD);
                         entries.add(ArchItems.ANCIENT_GREATAXE);
                         entries.add(ArchItems.FALSE_APPLE);
-                        entries.add(ArchItems.HEAD_CHOPPER);
+                        entries.add(ArchItems.THE_QUEENS_DECAPITATOR);
                         entries.add(ArchItems.PURIFIED_WINTER);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
                         entries.add(ArchItems.ANCIENT_HELMET);

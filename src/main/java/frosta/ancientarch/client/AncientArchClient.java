@@ -31,7 +31,7 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
-        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.HEAD_CHOPPER, new ModelIdentifier(AncientArch.MOD_ID, "head_chopper_inventory", "inventory"), (mode) -> switch(mode) {
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.THE_QUEENS_DECAPITATOR, new ModelIdentifier(AncientArch.MOD_ID, "the_queens_decapitator_inventory", "inventory"), (mode) -> switch(mode) {
             case GUI, GROUND -> true;
             default -> false;
         });

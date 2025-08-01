@@ -4,8 +4,8 @@
 	"parent": "minecraft:item/handheld",
 	"texture_size": [32, 32],
 	"textures": {
-		"particle": "ancient-arch:item/head_chopper_3d",
-		"layer0": "ancient-arch:item/head_chopper_3d"
+		"particle": "ancient-arch:item/the_queens_decapitator_3d",
+		"layer0": "ancient-arch:item/the_queens_decapitator_3d"
 	},
 	"display": {
 		"thirdperson_righthand": {

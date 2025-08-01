@@ -1,8 +1,8 @@
 {
   "type": "ancient-arch:kiln",
   "ingredients": [
-    { "item": "ancient-arch:holy_core"},
-    { "item": "ancient-arch:head_chopper"}
+    { "item": "ancient-arch:winter_soul"},
+    { "item": "ancient-arch:the_queens_decapitator"}
   ],
   "result": {
     "item": "ancient-arch:purified_winter",
