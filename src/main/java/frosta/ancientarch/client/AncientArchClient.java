@@ -43,6 +43,10 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
+        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.SWORD_OF_SANCTUARY, new ModelIdentifier(AncientArch.MOD_ID, "sword_of_sanctuary_inventory", "inventory"), (mode) -> switch(mode) {
+            case GUI, GROUND -> true;
+            default -> false;
+        });
 
         BlockRenderLayerMap.INSTANCE.putBlock(ArchBlocks.PINEAPPLE_CROP, RenderLayer.getCutout());
     }

@@ -12,6 +12,8 @@
   "item.ancient-arch.ancient_ingot": "Ancient Ingot",
   "item.ancient-arch.ancient_leggings": "Ancient Leggings",
   "item.ancient-arch.ancient_longsword": "Ancient Longsword",
+  "item.ancient-arch.holy_longsword": "Holy Longsword",
+  "item.ancient-arch.sword_of_sanctuary": "Sword of Sanctuary",
   "item.ancient-arch.holy_still_sword": "Still Sword",
   "item.ancient-arch.purified_winter": "Purified Winter",
   "item.ancient-arch.holy_hand_grenade": "Holy Hand Grenade",
@@ -39,5 +41,6 @@
   "item.ancient-arch.unrefined_ancient_amalgam": "Unrefined Ancient Amalgam",
   "item.ancient-arch.unstable_core": "Unstable Core",
   "effect.ancient-arch.stillness": "Stillness",
-  "itemgroup.ancient_arch": "Ancient Arch"
+  "itemgroup.ancient_arch": "Ancient Arch",
+  "item.ancient-arch.sword_of_sanctuary.lore": "A gift for Elena may she use it well..."
 }
