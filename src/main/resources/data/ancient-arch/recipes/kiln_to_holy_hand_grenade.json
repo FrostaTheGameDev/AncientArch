@@ -2,7 +2,7 @@
   "type": "ancient-arch:kiln",
   "ingredients": [
     { "item": "ancient-arch:holy_core"},
-    { "item": "minecraft:gunpowder"}
+    { "item": "minecraft:barrier"}
   ],
   "result": {
     "item": "ancient-arch:holy_hand_grenade",
