@@ -3,6 +3,7 @@ package frosta.ancientarch.client;
 
 import frosta.ancientarch.AncientArch;
 import frosta.ancientarch.block.ArchBlocks;
+import frosta.ancientarch.entity.ArchEntities;
 import frosta.ancientarch.item.ArchItems;
 import frosta.ancientarch.screen.ArchScreenHandlers;
 import frosta.ancientarch.screen.KilnBlockScreen;
@@ -10,9 +11,11 @@ import nazario.liby.api.client.entrypoint.LibyAssetLoadingEntrypoint;
 import nazario.liby.api.client.entrypoint.LibyAssetRegistryAccess;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.util.ModelIdentifier;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class AncientArchClient implements ClientModInitializer, LibyAssetLoadingEntrypoint {
 
@@ -49,5 +52,7 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
         });
 
         BlockRenderLayerMap.INSTANCE.putBlock(ArchBlocks.PINEAPPLE_CROP, RenderLayer.getCutout());
+
+        EntityRendererRegistry.register(ArchEntities.HOLY_HAND_GRENADE_PR, FlyingItemEntityRenderer::new);
     }
 }
