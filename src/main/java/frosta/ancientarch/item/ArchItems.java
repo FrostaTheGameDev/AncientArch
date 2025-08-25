@@ -10,10 +10,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 public class ArchItems {
-    public static final Item SILICA_GEL_PACKET = registerItem("silica_gel_packet", new Item(new FabricItemSettings().food(ArchFoodComponents.SILICA_GEL_PACKET)));
-    public static final Item MOLDABLE_PORCELAIN = registerItem("moldable_porcelain", new Item(new FabricItemSettings()));
-    public static final Item CLAY_SLIP = registerItem("clay_slip", new Item(new FabricItemSettings()));
-    public static final Item SILICA_CRYSTALS = registerItem("silica_crystals", new Item(new FabricItemSettings()));
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
@@ -31,7 +27,6 @@ public class ArchItems {
     public static final Item WINTER_SOUL = registerItem("winter_soul", new Item(new FabricItemSettings().fireproof().rarity(Rarity.RARE).maxCount(1)));
     public static final Item HOLY_CORE = registerItem("holy_core", new HolyCoreItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE).fireproof()));
 
-    public static final Item FALSE_APPLE = registerItem("false_apple", new Item(new FabricItemSettings().food(ArchFoodComponents.FALSE_APPLE).rarity(Rarity.EPIC).fireproof().maxCount(4)));
     public static final Item PINEAPPLE = registerItem("pineapple", new Item(new FabricItemSettings().food(ArchFoodComponents.PINEAPPLE)));
 
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
@@ -40,8 +35,6 @@ public class ArchItems {
     public static final Item HOLY_HAND_GRENADE = registerItem("holy_hand_grenade", new HolyHandGrenadeItem(new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
     public static final Item PURIFIED_WINTER = registerItem("purified_winter", new PurifiedWinterItem(ArchToolMaterial.HOLY,10,-3f,new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
     public static final Item HOLY_STILL_SWORD = registerItem("holy_still_sword", new StillSwordItem(ArchToolMaterial.ANCIENT_INGOT,8,-2.7f, new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
-    public static final Item SWORD_OF_SANCTUARY = registerItem("sword_of_sanctuary", new SwordofSanctuaryItem(ArchToolMaterial.HOLY, 7,-2.6f, new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
-    public static final Item THE_QUEENS_DECAPITATOR = registerItem("the_queens_decapitator", new TheQueensDecapitatorItem(ArchToolMaterial.FALSE,10, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item HOLY_LONGSWORD = registerItem("holy_longsword", new HolyLongswordItem(ArchToolMaterial.HOLY,7,-2.6f, new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
     public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));
     public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 8,-2.7f, new FabricItemSettings().fireproof()));

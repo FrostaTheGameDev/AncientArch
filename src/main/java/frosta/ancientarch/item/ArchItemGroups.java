@@ -20,10 +20,6 @@ public class ArchItemGroups {
                         entries.add(ArchBlocks.ANCIENT_BLOCK);
                         entries.add(ArchItems.PINEAPPLE);
                         entries.add(ArchItems.PINEAPPLE_SEEDS);
-                        entries.add(ArchItems.SILICA_CRYSTALS);
-                        entries.add(ArchItems.SILICA_GEL_PACKET);
-                        entries.add(ArchItems.CLAY_SLIP);
-                        entries.add(ArchItems.MOLDABLE_PORCELAIN);
                         entries.add(ArchItems.REMNANT_SHARD);
                         entries.add(ArchItems.MOLTEN_REMNANT);
                         entries.add(ArchItems.UNCONDITIONED_ANCIENT_MOULD);
@@ -32,8 +28,6 @@ public class ArchItemGroups {
                         entries.add(ArchItems.CONDITIONED_WEAPON_MOULD);
                         entries.add(ArchItems.ANCIENT_LONGSWORD);
                         entries.add(ArchItems.ANCIENT_GREATAXE);
-                        entries.add(ArchItems.FALSE_APPLE);
-                        entries.add(ArchItems.THE_QUEENS_DECAPITATOR);
                         entries.add(ArchItems.PURIFIED_WINTER);
                         entries.add(ArchItems.HOLY_LONGSWORD);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
