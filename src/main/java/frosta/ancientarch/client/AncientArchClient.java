@@ -34,19 +34,11 @@ public class AncientArchClient implements ClientModInitializer, LibyAssetLoading
             case GUI, GROUND -> true;
             default -> false;
         });
-        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.THE_QUEENS_DECAPITATOR, new ModelIdentifier(AncientArch.MOD_ID, "the_queens_decapitator_inventory", "inventory"), (mode) -> switch(mode) {
-            case GUI, GROUND -> true;
-            default -> false;
-        });
         libyAssetRegistryAccess.addItemPredicateModel(ArchItems.HOLY_STILL_SWORD, new ModelIdentifier(AncientArch.MOD_ID, "holy_still_sword_inventory", "inventory"), (mode) -> switch(mode) {
             case GUI, GROUND -> true;
             default -> false;
         });
         libyAssetRegistryAccess.addItemPredicateModel(ArchItems.PURIFIED_WINTER, new ModelIdentifier(AncientArch.MOD_ID, "purified_winter_inventory", "inventory"), (mode) -> switch(mode) {
-            case GUI, GROUND -> true;
-            default -> false;
-        });
-        libyAssetRegistryAccess.addItemPredicateModel(ArchItems.SWORD_OF_SANCTUARY, new ModelIdentifier(AncientArch.MOD_ID, "sword_of_sanctuary_inventory", "inventory"), (mode) -> switch(mode) {
             case GUI, GROUND -> true;
             default -> false;
         });
