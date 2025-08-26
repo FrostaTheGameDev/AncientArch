@@ -3,10 +3,8 @@
   "values": [
     "ancient-arch:ancient_longsword",
     "ancient-arch:ancient_greataxe",
-    "ancient-arch:the_queens_decapitator",
     "ancient-arch:holy_still_sword",
     "ancient-arch:holy_longsword",
-    "ancient-arch:purified_winter",
-    "ancient-arch:sword_of_sanctuary"
-  ]
+    "ancient-arch:purified_winter"
+    ]
 }
