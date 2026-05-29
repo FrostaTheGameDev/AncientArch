@@ -10,11 +10,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
 public class ArchItems {
+    ///Add fucking cat for Xenonite shit Elena
+
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item CONDITIONED_ANCIENT_MOULD = registerItem("conditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
-    public static final Item CONDITIONED_ARMOR_MOULD = registerItem("conditioned_armor_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item CONDITIONED_WEAPON_MOULD = registerItem("conditioned_weapon_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item HAMMER_AND_CHISEL = registerItem("hammer_and_chisel", new HammerAndChiselItem(ToolMaterials.NETHERITE, new FabricItemSettings().maxCount(1)));
     public static final Item ANCIENT_INGOT = registerItem("ancient_ingot", new Item(new FabricItemSettings().fireproof()));
@@ -32,18 +33,11 @@ public class ArchItems {
     public static final Item PINEAPPLE_SEEDS = registerItem("pineapple_seeds",
             new AliasedBlockItem(ArchBlocks.PINEAPPLE_CROP, new FabricItemSettings()));
 
-    public static final Item HOLY_HAND_GRENADE = registerItem("holy_hand_grenade", new HolyHandGrenadeItem(new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
-    public static final Item PURIFIED_WINTER = registerItem("purified_winter", new PurifiedWinterItem(ArchToolMaterial.HOLY,10,-3f,new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
-    public static final Item HOLY_STILL_SWORD = registerItem("holy_still_sword", new StillSwordItem(ArchToolMaterial.ANCIENT_INGOT,8,-2.7f, new FabricItemSettings().rarity(Rarity.RARE).fireproof()));
-    public static final Item HOLY_LONGSWORD = registerItem("holy_longsword", new HolyLongswordItem(ArchToolMaterial.HOLY,7,-2.6f, new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
-    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new GreatAxeItem(ArchToolMaterial.ANCIENT_INGOT, 10,-3f, new FabricItemSettings().fireproof()));
-    public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new LongswordItem(ArchToolMaterial.ANCIENT_INGOT, 8,-2.7f, new FabricItemSettings().fireproof()));
 
-    public static final Item ANCIENT_HELMET = registerItem("ancient_helmet", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
-    public static final Item ANCIENT_CHESTPLATE = registerItem("ancient_chestplate", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
-    public static final Item ANCIENT_LEGGINGS = registerItem("ancient_leggings", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
-    public static final Item ANCIENT_BOOTS = registerItem("ancient_boots", new AncientArmorItem(ArchArmorMaterials.ANCIENT, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
-
+    public static final Item PURIFIED_WINTER = registerItem("purified_winter", new AxeItem(ArchToolMaterial.HOLY,8,-3f,new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
+    public static final Item HOLY_LONGSWORD = registerItem("holy_longsword", new SwordItem(ArchToolMaterial.HOLY,7,-2.6f, new FabricItemSettings().fireproof().rarity(Rarity.RARE)));
+    public static final Item ANCIENT_GREATAXE = registerItem("ancient_greataxe", new AxeItem(ArchToolMaterial.ANCIENT_INGOT, 8.5f,-3f, new FabricItemSettings().fireproof()));
+    public static final Item ANCIENT_LONGSWORD = registerItem("ancient_longsword", new SwordItem(ArchToolMaterial.ANCIENT_INGOT, 7,-2.7f, new FabricItemSettings().fireproof()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(AncientArch.MOD_ID, name), item);

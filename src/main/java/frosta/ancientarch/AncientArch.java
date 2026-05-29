@@ -1,12 +1,9 @@
 package frosta.ancientarch;
 
 import frosta.ancientarch.block.ArchBlocks;
-import frosta.ancientarch.block.blockentity.ArchBlockEntitys;
 import frosta.ancientarch.effect.ArchEffects;
 import frosta.ancientarch.item.ArchItemGroups;
 import frosta.ancientarch.item.ArchItems;
-import frosta.ancientarch.recipe.ArchRecipes;
-import frosta.ancientarch.screen.ArchScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -18,15 +15,12 @@ public class AncientArch implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ArchBlockEntitys.registerBlockEntities();
-		ArchScreenHandlers.registerScreenHandlers();
 
 		ArchItemGroups.registerItemGroups();
 
 		ArchItems.registerModItems();
 		ArchBlocks.registerModBlocks();
 
-		ArchRecipes.registerRecipes();
 
 		ArchEffects.registerModEffects();
 	}

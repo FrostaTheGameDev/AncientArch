@@ -24,17 +24,12 @@ public class ArchItemGroups {
                         entries.add(ArchItems.MOLTEN_REMNANT);
                         entries.add(ArchItems.UNCONDITIONED_ANCIENT_MOULD);
                         entries.add(ArchItems.CONDITIONED_ANCIENT_MOULD);
-                        entries.add(ArchItems.CONDITIONED_ARMOR_MOULD);
                         entries.add(ArchItems.CONDITIONED_WEAPON_MOULD);
                         entries.add(ArchItems.ANCIENT_LONGSWORD);
                         entries.add(ArchItems.ANCIENT_GREATAXE);
                         entries.add(ArchItems.PURIFIED_WINTER);
                         entries.add(ArchItems.HOLY_LONGSWORD);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
-                        entries.add(ArchItems.ANCIENT_HELMET);
-                        entries.add(ArchItems.ANCIENT_CHESTPLATE);
-                        entries.add(ArchItems.ANCIENT_LEGGINGS);
-                        entries.add(ArchItems.ANCIENT_BOOTS);
                         entries.add(ArchItems.GAUNTLET_CORE);
                         entries.add(ArchItems.UNSTABLE_CORE);
                         entries.add(ArchItems.HOLY_CORE);

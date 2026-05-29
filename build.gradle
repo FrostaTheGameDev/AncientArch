@@ -41,7 +41,6 @@ fabricApi {
 }
 
 dependencies {
-	modImplementation "mod.nazario.liby:liby-0.0.0.0-1.20.1"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.3"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.3"
 

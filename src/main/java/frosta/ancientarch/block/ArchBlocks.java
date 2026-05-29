@@ -1,8 +1,6 @@
 package frosta.ancientarch.block;
 
 import frosta.ancientarch.AncientArch;
-import frosta.ancientarch.block.custom.CrackedEndPortalFrameBlock;
-import frosta.ancientarch.block.custom.KilnBlock;
 import frosta.ancientarch.block.custom.PineappleCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -14,14 +12,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ArchBlocks {
-    public static final Block CRACKED_END_PORTAL_FRAME = registerBlock("cracked_end_portal_frame",
-            new CrackedEndPortalFrameBlock(FabricBlockSettings.copyOf(Blocks.END_PORTAL_FRAME)));
-    public static final Block CRACKED_END_PORTAL_FRAME_USED = registerBlock("cracked_end_portal_frame_used",
-            new EndPortalFrameBlock(FabricBlockSettings.copyOf(Blocks.END_PORTAL_FRAME)));
 public static final Block ANCIENT_BLOCK = registerBlock("ancient_block",
         new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-    public static final Block KILN = registerBlock("kiln",
-            new KilnBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
     public static final Block PINEAPPLE_CROP = Registry.register(Registries.BLOCK,new Identifier(AncientArch.MOD_ID, "pineapple_crop"),
            new PineappleCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
