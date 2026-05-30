@@ -5,23 +5,28 @@
   "item.ancient-arch.ancient_longsword": "Ancient Longsword",
   "item.ancient-arch.fallen_longsword": "Fallen Longsword",
   "item.ancient-arch.pure_winter": "Pure Winter",
-  "item.ancient-arch.conditioned_ancient_mould": "Conditioned Ancient Mould",
-  "item.ancient-arch.conditioned_weapon_mould": "Conditioned Weapon Mould",
+
+  "item.ancient-arch.unstable_core": "Unstable Core",
   "item.ancient-arch.empty_core": "Empty Core",
   "item.ancient-arch.gauntlet_core": "Gauntlet Core",
-  "item.ancient-arch.hammer_and_chisel": "Hammer N' Chisel",
   "item.ancient-arch.holy_core": "Holy Core",
   "item.ancient-arch.winter_soul": "Winter Soul",
   "item.ancient-arch.autumn_soul": "Autumn Soul",
   "item.ancient-arch.summer_soul": "Summer Soul",
   "item.ancient-arch.spring_soul": "Spring Soul",
+
+
   "item.ancient-arch.pineapple": "Pineapple",
   "item.ancient-arch.pineapple_seeds": "Pineapple Seeds",
+
+
   "item.ancient-arch.molten_remnant": "Molten Remnant",
   "item.ancient-arch.remnant_shard": "Remnant Shard",
+  "item.ancient-arch.conditioned_ancient_mould": "Conditioned Ancient Mould",
+  "item.ancient-arch.conditioned_weapon_mould": "Conditioned Weapon Mould",
   "item.ancient-arch.unconditioned_ancient_mould": "Unconditioned Ancient Mould",
   "item.ancient-arch.unrefined_ancient_amalgam": "Unrefined Ancient Amalgam",
-  "item.ancient-arch.unstable_core": "Unstable Core",
+  "item.ancient-arch.bottled_molten_remnant": "Bottled Molten Remnant",
 
   "item.ancient-arch.void_carcass": "Void Carcass",
 

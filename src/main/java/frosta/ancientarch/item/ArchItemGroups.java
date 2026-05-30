@@ -1,7 +1,6 @@
 package frosta.ancientarch.item;
 
 import frosta.ancientarch.AncientArch;
-import frosta.ancientarch.block.ArchBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -15,24 +14,6 @@ public class ArchItemGroups {
             new Identifier(AncientArch.MOD_ID, "ancient_arch"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ancient_arch"))
                     .icon(() -> new ItemStack(ArchItems.EMPTY_CORE)).entries((displayContext, entries) -> {
-                        entries.add(ArchItems.UNREFINED_ANCIENT_AMALGAM);
-                        entries.add(ArchItems.ANCIENT_INGOT);
-                        entries.add(ArchBlocks.ANCIENT_BLOCK);
-                        entries.add(ArchItems.PINEAPPLE);
-                        entries.add(ArchItems.PINEAPPLE_SEEDS);
-                        entries.add(ArchItems.REMNANT_SHARD);
-                        entries.add(ArchItems.MOLTEN_REMNANT);
-                        entries.add(ArchItems.UNCONDITIONED_REMNANT_MOULD);
-                        entries.add(ArchItems.CONDITIONED_REMNANT_MOULD);
-                        entries.add(ArchItems.CONDITIONED_WEAPON_MOULD);
-                        entries.add(ArchItems.ANCIENT_LONGSWORD);
-                        entries.add(ArchItems.ANCIENT_GREATAXE);
-                        entries.add(ArchItems.PURE_WINTER);
-                        entries.add(ArchItems.FALLEN_LONGSWORD);
-                        entries.add(ArchItems.HAMMER_AND_CHISEL);
-                        entries.add(ArchItems.GAUNTLET_CORE);
-                        entries.add(ArchItems.UNSTABLE_CORE);
-                        entries.add(ArchItems.HOLY_CORE);
                         entries.add(ArchItems.EMPTY_CORE);
                     }).build());
 

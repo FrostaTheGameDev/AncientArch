@@ -21,6 +21,7 @@ public class ArchItems {
 
 
     ///Remnant
+    public static final Item BOTTLED_MOLTEN_REMNANT = registerItem("bottled_molten_remnant", new GlassBottleItem(new FabricItemSettings().fireproof()));
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item UNCONDITIONED_REMNANT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
@@ -32,7 +33,7 @@ public class ArchItems {
     public static final Item UNREFINED_ANCIENT_AMALGAM = registerItem("unrefined_ancient_amalgam", new Item(new FabricItemSettings().fireproof()));
 
     ///Random shit
-    public static final Item HAMMER_AND_CHISEL = registerItem("hammer_and_chisel", new HammerAndChiselItem(ToolMaterials.NETHERITE, new FabricItemSettings().maxCount(1)));
+
 
     /// Ancient Core stuff/Gauntlet core stuff
     public static final Item GAUNTLET_CORE = registerItem("gauntlet_core", new Item(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(1).fireproof()));
