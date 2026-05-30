@@ -22,13 +22,13 @@ public class ArchItemGroups {
                         entries.add(ArchItems.PINEAPPLE_SEEDS);
                         entries.add(ArchItems.REMNANT_SHARD);
                         entries.add(ArchItems.MOLTEN_REMNANT);
-                        entries.add(ArchItems.UNCONDITIONED_ANCIENT_MOULD);
-                        entries.add(ArchItems.CONDITIONED_ANCIENT_MOULD);
+                        entries.add(ArchItems.UNCONDITIONED_REMNANT_MOULD);
+                        entries.add(ArchItems.CONDITIONED_REMNANT_MOULD);
                         entries.add(ArchItems.CONDITIONED_WEAPON_MOULD);
                         entries.add(ArchItems.ANCIENT_LONGSWORD);
                         entries.add(ArchItems.ANCIENT_GREATAXE);
-                        entries.add(ArchItems.PURIFIED_WINTER);
-                        entries.add(ArchItems.HOLY_LONGSWORD);
+                        entries.add(ArchItems.PURE_WINTER);
+                        entries.add(ArchItems.FALLEN_LONGSWORD);
                         entries.add(ArchItems.HAMMER_AND_CHISEL);
                         entries.add(ArchItems.GAUNTLET_CORE);
                         entries.add(ArchItems.UNSTABLE_CORE);

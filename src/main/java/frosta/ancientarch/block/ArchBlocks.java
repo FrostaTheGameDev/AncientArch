@@ -12,10 +12,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ArchBlocks {
-public static final Block ANCIENT_BLOCK = registerBlock("ancient_block",
-        new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-    public static final Block PINEAPPLE_CROP = Registry.register(Registries.BLOCK,new Identifier(AncientArch.MOD_ID, "pineapple_crop"),
-           new PineappleCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    ///Ancient
+    public static final Block ANCIENT_BLOCK = registerBlock("ancient_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    ///Void
+
+    ///Crops
+    public static final Block PINEAPPLE_CROP = Registry.register(Registries.BLOCK,new Identifier(AncientArch.MOD_ID, "pineapple_crop"), new PineappleCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

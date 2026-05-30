@@ -1,6 +1,0 @@
-{
-	"parent": "minecraft:item/handheld",
-	"textures": {
-		"layer0": "ancient-arch:item/purified_winter_3d"
-	}
-}
