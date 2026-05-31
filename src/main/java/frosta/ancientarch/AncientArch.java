@@ -15,9 +15,7 @@ public class AncientArch implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
 		ArchItemGroups.registerItemGroups();
-
 		ArchItems.registerModItems();
 		ArchBlocks.registerModBlocks();
 
