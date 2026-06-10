@@ -9,8 +9,8 @@ import java.util.function.Supplier;
 public enum ArchToolMaterial implements ToolMaterial {
     ANCIENT_INGOT(4,2000,35,0.5f,26,
             () ->Ingredient.ofItems(Items.NETHERITE_SCRAP)),
-    HOLY(4,5000,45,1.5f,30,
-            () ->Ingredient.ofItems(ArchItems.HOLY_CORE));
+    VOID(4,5000,45,1.5f,30,
+            () ->Ingredient.ofItems(ArchItems.VOID_CARCASS));
 
 
     private final int miningLevel;

@@ -32,7 +32,7 @@
           "frosta.ancientarch.client.AncientArchClient"
 		],
 		"fabric-datagen": [
-			"frosta.ancientarch.datagen.AncientArchDataGenerator"
+			"frosta.ancientarch.AncientDataGenerator"
 		]
 	},
 	"mixins": [
