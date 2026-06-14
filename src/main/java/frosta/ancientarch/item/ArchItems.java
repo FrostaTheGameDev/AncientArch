@@ -21,7 +21,7 @@ public class ArchItems {
 
 
     ///Remnant
-    public static final Item BOTTLED_MOLTEN_REMNANT = registerItem("bottled_molten_remnant", new Item(new FabricItemSettings().food(ArchFoodComponents.REMNANT_BOTTLE).fireproof()));
+    public static final Item BOTTLED_MOLTEN_REMNANT = registerItem("bottled_molten_remnant", new RBottleItem(new FabricItemSettings().food(ArchFoodComponents.REMNANT_BOTTLE).fireproof()));
     public static final Item REMNANT_SHARD = registerItem("remnant_shard", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item MOLTEN_REMNANT = registerItem("molten_remnant", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item UNCONDITIONED_ANCIENT_MOULD = registerItem("unconditioned_ancient_mould", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
